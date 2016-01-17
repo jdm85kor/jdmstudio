@@ -21,7 +21,7 @@
     "facebook": {
       "FACEBOOK_APP_ID":"1682606422010526",
       "FACEBOOK_APP_SECRET": "06f3c82ed6a44f896ef73fc3d5df56a3",
-      "callbackURL": "http://localhost:3000/auth/facebook/callback"
+      "callbackURL": "http://jdmstudio.photo/auth/facebook/callback"
     }
   }
 }
