@@ -73,7 +73,6 @@ app.use(passport.session());
 
 
 app.use('/', routes);
-app.use('/users', users);
 app.use('/auth/facebook',auth_facebook);
 app.use('/auth/facebook/callback',callback_facebook);
 app.use('/auth/google',auth_google);
@@ -109,7 +108,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error', {
     message: err.message,
-    error: {}
+    error: err.status
   });
 });
 
