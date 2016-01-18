@@ -11,15 +11,15 @@ var pkginfo = require('./package');
 var auth_facebook = require('./routes/auth_facebook');
 var callback_facebook = require('./routes/callback_facebook');
 var logout=require('./routes/logout');
-var auth_google = require('./routes/auth_google');
-var callback_google = require('./routes/callback_google');
+//var auth_google = require('./routes/auth_google');
+//var callback_google = require('./routes/callback_google');
 
 
 
 
 var passport = require('passport')
-  , FacebookStrategy = require('passport-facebook').Strategy
-  , GoogleStrategy = require('passport-google-oauth2').Strategy;
+  , FacebookStrategy = require('passport-facebook').Strategy;
+//var GoogleStrategy = require('passport-google-oauth2').Strategy;
 
 passport.serializeUser(function(user,done){
   console.log('serialize');
@@ -41,7 +41,7 @@ passport.use(new FacebookStrategy({
    done(null,profile);
   }
 ));
-
+/*
 passport.use(new GoogleStrategy({
     clientID:     pkginfo.oauth.google.client_id,
     clientSecret: pkginfo.oauth.google.client_secret,
@@ -54,7 +54,7 @@ passport.use(new GoogleStrategy({
     });
   }
 ));
-
+*/
 var app = express();
 
 // view engine setup
@@ -75,8 +75,8 @@ app.use(passport.session());
 app.use('/', routes);
 app.use('/auth/facebook',auth_facebook);
 app.use('/auth/facebook/callback',callback_facebook);
-app.use('/auth/google',auth_google);
-app.use('/auth/google/callback',callback_google);
+//app.use('/auth/google',auth_google);
+//app.use('/auth/google/callback',callback_google);
 app.use('/logout',logout);
 
 
@@ -101,7 +101,7 @@ if (app.get('env') === 'development') {
     });
   });
 }
-/*
+
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
@@ -111,6 +111,6 @@ app.use(function(err, req, res, next) {
     error: err.status
   });
 });
-*/
+
 
 module.exports = app;
