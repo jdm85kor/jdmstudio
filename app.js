@@ -73,7 +73,7 @@ app.use(passport.session());
 
 
 app.use('/', routes);
-app.use('/users', users);
+//app.use('/users', users);
 app.use('/auth/facebook',auth_facebook);
 app.use('/auth/facebook/callback',callback_facebook);
 app.use('/auth/google',auth_google);
