@@ -80,7 +80,7 @@ app.use('/auth/google',auth_google);
 app.use('/auth/google/callback',callback_google);
 app.use('/logout',logout);
 
-/
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
