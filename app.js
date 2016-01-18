@@ -6,7 +6,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
 var pkginfo = require('./package');
 var auth_facebook = require('./routes/auth_facebook');
 var callback_facebook = require('./routes/callback_facebook');
@@ -45,7 +44,7 @@ passport.use(new FacebookStrategy({
 passport.use(new GoogleStrategy({
     clientID:     pkginfo.oauth.google.client_id,
     clientSecret: pkginfo.oauth.google.client_secret,
-    callbackURL: pkginfo.oauth.google.redirect_uris,
+    callbackURL:  pkginfo.oauth.google.redirect_uris,
     passReqToCallback   : true
   },
   function(request, accessToken, refreshToken, profile, done) {
