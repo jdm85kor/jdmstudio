@@ -24,12 +24,10 @@
       "FACEBOOK_APP_SECRET": "06f3c82ed6a44f896ef73fc3d5df56a3",
       "callbackURL": "http://jdmstudio.photo/auth/facebook/callback"
     },
-    "google" : {
-      "client_id" :"61711123767-v53brnvj436vq2ukvab5bufuobmu7b2u.apps.googleusercontent.com",
-      "client_secret":"EpjCSFkASv-IPv6Wh43KHI8v",
-      "redirect_uris":"http://jdmstudio.photo/auth/google/callback"
+    "google": {
+      "client_id": "61711123767-v53brnvj436vq2ukvab5bufuobmu7b2u.apps.googleusercontent.com",
+      "client_secret": "EpjCSFkASv-IPv6Wh43KHI8v",
+      "redirect_uris": "http://jdmstudio.photo/auth/google/callback"
     }
   }
 }
-
-    
