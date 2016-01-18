@@ -19,7 +19,7 @@ var callback_google = require('./routes/callback_google');
 
 var passport = require('passport')
   , FacebookStrategy = require('passport-facebook').Strategy
-  , GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
+  , GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
 passport.serializeUser(function(user,done){
   console.log('serialize');
