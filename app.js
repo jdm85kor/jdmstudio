@@ -41,7 +41,7 @@ passport.use(new FacebookStrategy({
    done(null,profile);
   }
 ));
-/*
+
 passport.use(new GoogleStrategy({
     clientID:     pkginfo.oauth.google.client_id,
     clientSecret: pkginfo.oauth.google.client_secret,
@@ -54,7 +54,7 @@ passport.use(new GoogleStrategy({
     });
   }
 ));
-*/
+
 var app = express();
 
 // view engine setup
@@ -73,25 +73,14 @@ app.use(passport.session());
 
 
 app.use('/', routes);
-//app.use('/users', users);
+app.use('/users', users);
 app.use('/auth/facebook',auth_facebook);
 app.use('/auth/facebook/callback',callback_facebook);
-//app.use('/auth/google',auth_google);
-//app.use('/auth/google/callback',callback_google);
+app.use('/auth/google',auth_google);
+app.use('/auth/google/callback',callback_google);
 app.use('/logout',logout);
 
-/*
-app.get('/', function(req, res, next) {
-  res.render('index', { title: 'JDMstudio' });
-});
-app.get('/auth/facebook',passport.authenticate('facebook'));
-app.get('/auth/facebook/callbackURL',
-  passport.authenticate('facebook',{successRedirect:'/users',
-    failureRedirect: '/'}));
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'JDMstudio auth ok' });
-});
-*/
+/
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

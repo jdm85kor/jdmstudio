@@ -3,7 +3,7 @@ var router = express.Router();
 var passport = require('passport');
 
 
-app.get('/', passport.authenticate('google', {
+router.get('/', passport.authenticate('google', {
   scope: [
     'https://www.googleapis.com/auth/userinfo.profile'
   ]
