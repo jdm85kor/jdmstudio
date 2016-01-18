@@ -45,7 +45,7 @@ passport.use(new FacebookStrategy({
 passport.use(new GoogleStrategy({
     clientID:     pkginfo.oauth.google.client_id,
     clientSecret: pkginfo.oauth.google.client_secret,
-    callbackURL: pkginfo.oauth.google.callbackURL,
+    callbackURL: pkginfo.oauth.google.redirect_uris,
     passReqToCallback   : true
   },
   function(request, accessToken, refreshToken, profile, done) {
