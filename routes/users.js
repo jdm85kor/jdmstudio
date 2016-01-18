@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'JDMstudio auth ok' });
+  res.render('users', { title: 'JDMstudio auth ok' });
 });
 
 module.exports = router;

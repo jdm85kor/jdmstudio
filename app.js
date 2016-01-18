@@ -9,11 +9,17 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var pkginfo = require('./package');
 var auth_facebook = require('./routes/auth_facebook');
-var auth_ok=require('./routes/auth_ok');
+var callback_facebook = require('./routes/callback_facebook');
 var logout=require('./routes/logout');
+var auth_google = require('./routes/auth_google');
+var callback_gogle = require('./routes/callback_google');
+
+
+
 
 var passport = require('passport')
-  , FacebookStrategy=require('passport-facebook').Strategy;
+  , FacebookStrategy = require('passport-facebook').Strategy
+  , GoogleStrategy = require( 'passport-google-oauth2' ).Strategy;
 
 passport.serializeUser(function(user,done){
   console.log('serialize');
@@ -29,11 +35,24 @@ passport.use(new FacebookStrategy({
   clientID:pkginfo.oauth.facebook.FACEBOOK_APP_ID,
   clientSecret:pkginfo.oauth.facebook.FACEBOOK_APP_SECRET,
   callbackURL:pkginfo.oauth.facebook.callbackURL
-},
-function(accessToken,refreshToken,profile,done){
-  console.log(profile);
-  done(null,profile);
-}
+  },
+  function(accessToken,refreshToken,profile,done){
+   console.log(profile);
+   done(null,profile);
+  }
+));
+
+passport.use(new GoogleStrategy({
+    clientID:     pkginfo.oauth.google.client_id,
+    clientSecret: pkginfo.oauth.google.client_secret,
+    callbackURL: pkginfo.oauth.google.callbackURL,
+    passReqToCallback   : true
+  },
+  function(request, accessToken, refreshToken, profile, done) {
+    User.findOrCreate({ googleId: profile.id }, function (err, user) {
+      return done(err, user);
+    });
+  }
 ));
 
 var app = express();
@@ -56,7 +75,9 @@ app.use(passport.session());
 app.use('/', routes);
 app.use('/users', users);
 app.use('/auth/facebook',auth_facebook);
-app.use('/auth/facebook/callback',auth_ok);
+app.use('/auth/facebook/callback',callback_facebook);
+app.use('/auth/google',auth_google);
+app.use('/auth/google/callback',callback_google);
 app.use('/logout',logout);
 
 /*
