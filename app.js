@@ -41,7 +41,7 @@ passport.use(new FacebookStrategy({
    done(null,profile);
   }
 ));
-
+/*
 passport.use(new GoogleStrategy({
     clientID:     pkginfo.oauth.google.client_id,
     clientSecret: pkginfo.oauth.google.client_secret,
@@ -54,7 +54,7 @@ passport.use(new GoogleStrategy({
     });
   }
 ));
-
+*/
 var app = express();
 
 // view engine setup
@@ -76,8 +76,8 @@ app.use('/', routes);
 //app.use('/users', users);
 app.use('/auth/facebook',auth_facebook);
 app.use('/auth/facebook/callback',callback_facebook);
-app.use('/auth/google',auth_google);
-app.use('/auth/google/callback',callback_google);
+//app.use('/auth/google',auth_google);
+//app.use('/auth/google/callback',callback_google);
 app.use('/logout',logout);
 
 /*
