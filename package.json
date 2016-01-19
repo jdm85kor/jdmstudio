@@ -27,7 +27,7 @@
     "google": {
       "client_id": "61711123767-v53brnvj436vq2ukvab5bufuobmu7b2u.apps.googleusercontent.com",
       "client_secret": "EpjCSFkASv-IPv6Wh43KHI8v",
-      "redirect_uris": "http://jdmstudio.herokuapp.com/auth/google/callback"
+      "redirect_uris": "http://jdmstudio.photo/auth/google/callback"
     }
   }
 }

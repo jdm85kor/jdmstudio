@@ -17,8 +17,8 @@ var callback_google = require('./routes/callback_google');
 
 
 var passport = require('passport')
-  , FacebookStrategy = require('passport-facebook').Strategy;
-var GoogleStrategy = require('passport-google-oauth2').Strategy;
+  , FacebookStrategy = require('passport-facebook').Strategy
+  , GoogleStrategy = require('passport-google-oauth2').Strategy;
 
 passport.serializeUser(function(user,done){
   console.log('serialize');
@@ -55,6 +55,8 @@ passport.use(new GoogleStrategy({
 ));
 
 var app = express();
+var router = app.Router();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -71,12 +73,38 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-app.use('/', routes);
-app.use('/auth/facebook',auth_facebook);
-app.use('/auth/facebook/callback',callback_facebook);
-app.use('/auth/google',auth_google);
-app.use('/auth/google/callback',callback_google);
-app.use('/logout',logout);
+/* GET home page. */
+app.get('/', function(req, res, next) {
+  res.render('index', { title: 'JDMstudio' });
+});
+
+/* GET authenticate facebook */
+app.get('/auth/facebook',passport.authenticate('facebook'));
+
+/* GET callback facebook */
+app.get('/auth/facebook/callback',passport.authenticate('google', {
+  successRedirect: '/',
+  failureRedirect: '/'
+}));
+
+/* GET authenticate google */
+app.get('/', passport.authenticate('google', {
+  scope: [
+    'https://www.googleapis.com/auth/userinfo.profile'
+  ]
+}));
+
+/* GET callback google */
+app.get('/', passport.authenticate('google', {
+  successRedirect: '/',
+  failureRedirect: '/'
+}));
+
+/* GET logout button */
+app.get('/', function(req, res, next) {
+    req.logout();
+    res.redirect('/');
+});
 
 
 
