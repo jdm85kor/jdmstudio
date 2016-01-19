@@ -5,14 +5,16 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var routes = require('./routes/index');
 var pkginfo = require('./package');
+
+/*
+var routes = require('./routes/index');
 var auth_facebook = require('./routes/auth_facebook');
 var callback_facebook = require('./routes/callback_facebook');
 var logout=require('./routes/logout');
 var auth_google = require('./routes/auth_google');
 var callback_google = require('./routes/callback_google');
-
+*/
 
 
 
