@@ -37,7 +37,7 @@ passport.use(new FacebookStrategy({
   },
   function(accessToken,refreshToken,profile,done){
    console.log(profile);
-   done(null,profile);
+   return done(null,profile);
   }
 ));
 
@@ -48,9 +48,9 @@ passport.use(new GoogleStrategy({
     passReqToCallback   : true
   },
   function(request, accessToken, refreshToken, profile, done) {
-    User.findOrCreate({ googleId: profile.id }, function (err, user) {
-      return done(err, user);
-    });
+    console.log(profile);
+    done(err, user);
+    
   }
 ));
 
