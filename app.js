@@ -9,7 +9,7 @@ var pkginfo = require('./package');
 
 
 var routes = require('./routes/index');
-var auth_login = require('.routes/auth_login');
+var auth_login = require('./routes/auth_login');
 
 var auth_facebook = require('./routes/auth_facebook');
 var callback_facebook = require('./routes/callback_facebook');
