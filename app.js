@@ -76,36 +76,36 @@ app.use(passport.session());
 
 
 /* GET home page. */
-app.get('/', function(req, res, next) {
+router.get('/', function(req, res, next) {
   res.render('index', { title: 'JDMstudio' });
 });
 
 /* GET authenticate facebook */
-app.get('/auth/facebook',passport.authenticate('facebook'));
+router.get('/auth/facebook',passport.authenticate('facebook'));
 
 /* GET callback facebook */
-app.get('/auth/facebook/callback',
+router.get('/auth/facebook/callback',
   passport.authenticate('facebook', { failureRedirect: '/' }),
   function(req,res) {
     res.redirect('/');
   });
 
 /* GET authenticate google */
-app.get('/auth/google', passport.authenticate('google', {
+router.get('/auth/google', passport.authenticate('google', {
   scope: [
     'https://www.googleapis.com/auth/userinfo.profile'
   ]
 }));
 
 /* GET callback google */
-app.get('/auth/google/callback',
+router.get('/auth/google/callback',
  passport.authenticate('google', {
   successRedirect: '/',
   failureRedirect: '/'
 }));
 
 /* GET logout button */
-app.get('/logout', function(req, res, next) {
+router.get('/logout', function(req, res, next) {
     req.logout();
     res.redirect('/');
 });
@@ -113,7 +113,7 @@ app.get('/logout', function(req, res, next) {
 
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+router.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
@@ -123,8 +123,8 @@ app.use(function(req, res, next) {
 
 // development error handler
 // will print stacktrace
-if (app.get('env') === 'development') {
-  app.use(function(err, req, res, next) {
+if (router.get('env') === 'development') {
+  router.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
       message: err.message,
@@ -135,7 +135,7 @@ if (app.get('env') === 'development') {
 
 // production error handler
 // no stacktraces leaked to user
-app.use(function(err, req, res, next) {
+router.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error', {
     message: err.message,
