@@ -88,20 +88,20 @@ app.get('/auth/facebook/callback',passport.authenticate('google', {
 }));
 
 /* GET authenticate google */
-app.get('/', passport.authenticate('google', {
+app.get('/auth/google', passport.authenticate('google', {
   scope: [
     'https://www.googleapis.com/auth/userinfo.profile'
   ]
 }));
 
 /* GET callback google */
-app.get('/', passport.authenticate('google', {
+app.get('/auth/google/callback', passport.authenticate('google', {
   successRedirect: '/',
   failureRedirect: '/'
 }));
 
 /* GET logout button */
-app.get('/', function(req, res, next) {
+app.get('/logout', function(req, res, next) {
     req.logout();
     res.redirect('/');
 });
