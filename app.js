@@ -45,7 +45,7 @@ passport.use(new GoogleStrategy({
     clientID:     pkginfo.oauth.google.client_id,
     clientSecret: pkginfo.oauth.google.client_secret,
     callbackURL:  pkginfo.oauth.google.redirect_uris,
-    passReqToCallback   : true
+    passReqToCallback   : false
   },
   function(request, accessToken, refreshToken, profile, done) {
     console.log(profile);
