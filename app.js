@@ -15,9 +15,6 @@ var logout=require('./routes/logout');
 var auth_google = require('./routes/auth_google');
 var callback_google = require('./routes/callback_google');
 
-
-
-
 var passport = require('passport')
   , FacebookStrategy = require('passport-facebook').Strategy
   , GoogleStrategy = require('passport-google-oauth2').Strategy;
@@ -79,7 +76,7 @@ app.use(passport.session());
 app.use('/',routes);
 app.use('/auth_facebook',auth_facebook);
 app.use('/auth/facebook/callback',callback_facebook);
-app.use('/auth_google',auth_google);
+app.use('/auth/google',auth_google);
 app.use('/auth/google/callback',callback_google);
 app.use('logout',logout);
 
