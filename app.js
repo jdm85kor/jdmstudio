@@ -38,8 +38,8 @@ passport.use(new FacebookStrategy({
   callbackURL:pkginfo.oauth.facebook.callbackURL
   },
   function(accessToken,refreshToken,profile,done){
-   console.log(profile);
-   done(null,profile);
+    console.log(profile);
+    done(null,profile);
   }
 ));
 
@@ -51,7 +51,7 @@ passport.use(new GoogleStrategy({
   },
   function(request, accessToken, refreshToken, profile, done) {
     console.log(profile);
-    done(err, profile);
+    done(null, profile);
     
   }
 ));
