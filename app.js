@@ -7,15 +7,9 @@ var bodyParser = require('body-parser');
 
 var pkginfo = require('./package');
 
-
 var routes = require('./routes/index');
 var auth_login = require('./routes/auth_login');
-
-var auth_facebook = require('./routes/auth_facebook');
-var callback_facebook = require('./routes/callback_facebook');
 var logout=require('./routes/logout');
-var auth_google = require('./routes/auth_google');
-var callback_google = require('./routes/callback_google');
 
 var passport = require('passport')
   , FacebookStrategy = require('passport-facebook').Strategy
@@ -55,8 +49,6 @@ passport.use(new GoogleStrategy({
 ));
 
 var app = express();
-//var router = express.Router();
-
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -72,54 +64,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(passport.initialize());
 app.use(passport.session());
 
-/*   Routing  Log in   */
 app.use('/',routes);
+
+/*   Routing  Log in   */
 app.use('/auth',auth_login);
-
-//app.use('/auth/facebook',auth_facebook);
-//app.use('/auth/facebook/callback',callback_facebook);
-//app.use('/auth/google',auth_google);
-//app.use('/auth/google/callback',callback_google);
+/*   Routing  Log out   */
 app.use('/logout',logout);
-
-
-/* GET home page. 
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'JDMstudio' });
-});
-*/
-/* GET authenticate facebook 
-router.get('/auth/facebook',passport.authenticate('facebook'));
-*/
-/* GET callback facebook 
-router.get('/auth/facebook/callback',
-  passport.authenticate('facebook', { failureRedirect: '/' }),
-  function(req,res) {
-    res.redirect('/');
-  });
-*/
-/* GET authenticate google 
-router.get('/auth/google', 
-  passport.authenticate('google', {
-    scope: [
-    'https://www.googleapis.com/auth/userinfo.profile'
-  ]
-}));
-*/
-/* GET callback google 
-router.get('/auth/google/callback',
- passport.authenticate('google', {
-  successRedirect: '/',
-  failureRedirect: '/'
-}));
-*/
-/* GET logout button 
-router.get('/logout', function(req, res, next) {
-    req.logout();
-    res.redirect('/');
-});
-*/
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -151,9 +101,5 @@ app.use(function(err, req, res, next) {
     error: err.status
   });
 });
-
-
-//app.use('/',router);
-
 
 module.exports = app;
