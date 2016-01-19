@@ -9,6 +9,8 @@ var pkginfo = require('./package');
 
 
 var routes = require('./routes/index');
+var auth_login = require('.routes/auth_login');
+
 var auth_facebook = require('./routes/auth_facebook');
 var callback_facebook = require('./routes/callback_facebook');
 var logout=require('./routes/logout');
@@ -48,13 +50,11 @@ passport.use(new GoogleStrategy({
   },
   function(request, accessToken, refreshToken, profile, done) {
     console.log(profile);
-    done(null, profile);
-    
+    done(null, profile); 
   }
 ));
 
 var app = express();
-
 //var router = express.Router();
 
 
@@ -72,12 +72,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(passport.initialize());
 app.use(passport.session());
 
-
+/*   Routing  Log in   */
 app.use('/',routes);
-app.use('/auth/facebook',auth_facebook);
-app.use('/auth/facebook/callback',callback_facebook);
-app.use('/auth/google',auth_google);
-app.use('/auth/google/callback',callback_google);
+app.use('/auth',auth_login);
+
+//app.use('/auth/facebook',auth_facebook);
+//app.use('/auth/facebook/callback',callback_facebook);
+//app.use('/auth/google',auth_google);
+//app.use('/auth/google/callback',callback_google);
 app.use('/logout',logout);
 
 
