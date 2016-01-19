@@ -37,7 +37,7 @@ passport.use(new FacebookStrategy({
   },
   function(accessToken,refreshToken,profile,done){
    console.log(profile);
-   return done(null,profile);
+   done(null,profile);
   }
 ));
 
@@ -49,7 +49,7 @@ passport.use(new GoogleStrategy({
   },
   function(request, accessToken, refreshToken, profile, done) {
     console.log(profile);
-    done(err, user);
+    done(err, profile);
     
   }
 ));
