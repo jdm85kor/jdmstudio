@@ -55,7 +55,7 @@ passport.use(new GoogleStrategy({
 ));
 
 var app = express();
-var router = app.Router();
+var router = express.Router();
 
 
 // view engine setup
