@@ -143,5 +143,7 @@ router.use(function(err, req, res, next) {
   });
 });
 
+app.use('/',router);
+
 
 module.exports = app;
