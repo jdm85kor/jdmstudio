@@ -84,10 +84,11 @@ app.get('/', function(req, res, next) {
 app.get('/auth/facebook',passport.authenticate('facebook'));
 
 /* GET callback facebook */
-app.get('/auth/facebook/callback',passport.authenticate('facebook', {
-  successRedirect: '/',
-  failureRedirect: '/'
-}));
+app.get('/auth/facebook/callback',
+  passport.authenticate('facebook', { failureRedirect: '/' }),
+  function(req,res) {
+    res.redirect('/');
+  });
 
 /* GET authenticate google */
 app.get('/auth/google', passport.authenticate('google', {
@@ -97,7 +98,8 @@ app.get('/auth/google', passport.authenticate('google', {
 }));
 
 /* GET callback google */
-app.get('/auth/google/callback', passport.authenticate('google', {
+app.get('/auth/google/callback',
+ passport.authenticate('google', {
   successRedirect: '/',
   failureRedirect: '/'
 }));
