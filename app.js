@@ -7,14 +7,14 @@ var bodyParser = require('body-parser');
 
 var pkginfo = require('./package');
 
-/*
+
 var routes = require('./routes/index');
 var auth_facebook = require('./routes/auth_facebook');
 var callback_facebook = require('./routes/callback_facebook');
 var logout=require('./routes/logout');
 var auth_google = require('./routes/auth_google');
 var callback_google = require('./routes/callback_google');
-*/
+
 
 
 
@@ -57,7 +57,8 @@ passport.use(new GoogleStrategy({
 ));
 
 var app = express();
-var router = express.Router();
+
+//var router = express.Router();
 
 
 // view engine setup
@@ -75,45 +76,48 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-/* GET home page. */
+
+
+/* GET home page. 
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'JDMstudio' });
 });
-
-/* GET authenticate facebook */
+*/
+/* GET authenticate facebook 
 router.get('/auth/facebook',passport.authenticate('facebook'));
-
-/* GET callback facebook */
+*/
+/* GET callback facebook 
 router.get('/auth/facebook/callback',
   passport.authenticate('facebook', { failureRedirect: '/' }),
   function(req,res) {
     res.redirect('/');
   });
-
-/* GET authenticate google */
-router.get('/auth/google', passport.authenticate('google', {
-  scope: [
+*/
+/* GET authenticate google 
+router.get('/auth/google', 
+  passport.authenticate('google', {
+    scope: [
     'https://www.googleapis.com/auth/userinfo.profile'
   ]
 }));
-
-/* GET callback google */
+*/
+/* GET callback google 
 router.get('/auth/google/callback',
  passport.authenticate('google', {
   successRedirect: '/',
   failureRedirect: '/'
 }));
-
-/* GET logout button */
+*/
+/* GET logout button 
 router.get('/logout', function(req, res, next) {
     req.logout();
     res.redirect('/');
 });
-
+*/
 
 
 // catch 404 and forward to error handler
-router.use(function(req, res, next) {
+app.use(function(req, res, next) {
   var err = new Error('Not Found');
   err.status = 404;
   next(err);
@@ -123,9 +127,8 @@ router.use(function(req, res, next) {
 
 // development error handler
 // will print stacktrace
-if (router.get('env') === 'development') {
-  router.use(function(err, req, res, next) {
-    console.log("!!!!!!!!!!!!!!!!!!!!!!!!!");
+if (app.get('env') === 'development') {
+  app.use(function(err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
       message: err.message,
@@ -136,8 +139,7 @@ if (router.get('env') === 'development') {
 
 // production error handler
 // no stacktraces leaked to user
-router.use(function(err, req, res, next) {
-  console.log("@@@@@@@@@@@@@@@@@@@@@@@@@");
+app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error', {
     message: err.message,
@@ -145,7 +147,8 @@ router.use(function(err, req, res, next) {
   });
 });
 
-app.use('/',router);
+
+//app.use('/',router);
 
 
 module.exports = app;

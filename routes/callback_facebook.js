@@ -3,7 +3,8 @@ var router = express.Router();
 var passport = require('passport');
 
 router.get('/',
-	passport.authenticate('facebook',{successRedirect:'/',
-		failureRedirect: '/'}));
-
+  passport.authenticate('facebook', { failureRedirect: '/' }),
+  function(req,res) {
+    res.redirect('/');
+  });
 module.exports = router;
