@@ -20,9 +20,9 @@ passport.serializeUser(function(user,done){
   done(null,user);
 });
 
-passport.deserializeUser(function(user,done){
+passport.deserializeUser(function(obj,done){
   console.log('deserialize');
-  done(null,user);
+  done(null,obj);
 });
 
 passport.use(new FacebookStrategy({
@@ -32,7 +32,7 @@ passport.use(new FacebookStrategy({
   },
   function(accessToken,refreshToken,profile,done){
     console.log(profile);
-    done(null,profile);
+    return done(null,profile);
   }
 ));
 
@@ -44,7 +44,7 @@ passport.use(new GoogleStrategy({
   },
   function(request, accessToken, refreshToken, profile, done) {
     console.log(profile);
-    done(null, profile); 
+    return done(null, profile); 
   }
 ));
 
