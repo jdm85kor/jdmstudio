@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 var pkginfo = require('./package');
 
-var routes = require('./routes/index');
+var index = require('./routes/index');
 var auth_login = require('./routes/auth_login');
 var logout=require('./routes/logout');
 
@@ -64,7 +64,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(passport.initialize());
 app.use(passport.session());
 
-app.use('/',routes);
+app.use('/',index);
 
 /*   Routing  Log in   */
 app.use('/auth',auth_login);
