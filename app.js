@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 
 var pkginfo = require('./package');
 
-var index = require('./routes/index');
+var index= require('./routes/index');
 var auth_login = require('./routes/auth_login');
 var logout=require('./routes/logout');
 
