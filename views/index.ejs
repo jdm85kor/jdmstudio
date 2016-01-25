@@ -12,11 +12,13 @@
 	<h1><%= title %></h1>
 
 		<!-- user name -->
-		
-		<button onclick="location.href='/logout'">logout</button>
+		<% if (user.username) { %>
+  			<%= user.username %>
+  			<% } %>
 
+		<button onclick="location.href='/logout'">logout</button><br>
 
-		<a href='/auth/facebook'><img src="/images/img_facebook.png"></a>
+		<a href='/auth/facebook'><!--<img src="/images/img_facebook.png">-->facebook login</a><br>
 		<a href='/auth/google'>google login</a>
 
 
