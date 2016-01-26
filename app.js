@@ -7,9 +7,9 @@ var bodyParser = require('body-parser');
 
 var pkginfo = require('./package');
 
-var index= require('./routes/index');
+var index = require('./routes/index');
 var auth_login = require('./routes/auth_login');
-var logout=require('./routes/logout');
+var logout = require('./routes/logout');
 
 var passport = require('passport')
   , FacebookStrategy = require('passport-facebook').Strategy
@@ -32,7 +32,7 @@ passport.use(new FacebookStrategy({
   },
   function(accessToken,refreshToken,profile,done){
     console.log(profile);
-    return done(null,profile);
+    done(null,profile);
   }
 ));
 
@@ -44,7 +44,7 @@ passport.use(new GoogleStrategy({
   },
   function(request, accessToken, refreshToken, profile, done) {
     console.log(profile);
-    return done(null, profile); 
+    done(null, profile); 
   }
 ));
 
