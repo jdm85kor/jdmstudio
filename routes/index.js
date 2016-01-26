@@ -7,8 +7,7 @@ router.get('/', function(req, res) {
 	console.log(req.session);
 	console.log("log user");
 	console.log(req.user);
-  res.render('index', { title: 'JDMstudio', 
-  						user : req.session.passport.user || {}
+  	res.render('index', { title: 'JDMstudio'
   	 				 
   });
 });
