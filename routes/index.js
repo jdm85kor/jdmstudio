@@ -3,7 +3,10 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'JDMstudio'
+	console.log(req.session);
+	console.log(req.user);
+  res.render('index', { title: 'JDMstudio', 
+  						user : req.session.passport.user || {}
   	 				 
   });
 });
