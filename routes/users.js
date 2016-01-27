@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var passport = require('passport');
+require('passport');
 
 /* GET users page. */
 router.get('/',ensureAuthenticated, function(req, res) {
