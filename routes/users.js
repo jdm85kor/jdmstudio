@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 /* GET users page. */
-router.get('/users', function(req, res) {
+router.get('/', function(req, res) {
 	console.log("log session");
 	console.log(req.session);
 	console.log("log user");
