@@ -10,15 +10,15 @@ router.get('/',ensureAuthenticated, function(req, res) {
 });
 
 var ensureAuthenticated = function(req,res,next){
-  //if(req.isAuthenticated()){
+  if(req.isAuthenticated()){
     console.log("log session");
     console.log(req.session);
     console.log("log user");
     console.log(req.user);  
-  //  return next();
-  //}
+    return next();
+  }
   res.redirect('/');
-};
+}
 
 //
 module.exports = router;
