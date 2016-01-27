@@ -5,18 +5,18 @@ var router = express.Router();
 router.get('/',ensureAuthenticated, function(req, res) {
 	
   	res.render('users', { title: 'JDMstudio',
-  						  user : req.user
+  						  user : req.session.passport.user
   });
 });
 
 function ensureAuthenticated(req,res,next){
-  //if(req.isAuthenticated()){
+  if(req.isAuthenticated()){
     console.log("log session");
     console.log(req.session);
     console.log("log user");
     console.log(req.session.passport.user);  
-  //  return next();
-  //}
+    return next();
+  }
   res.redirect('/');
 }
 
