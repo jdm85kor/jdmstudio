@@ -71,7 +71,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
   secret: 'jdm',
-  resave: false,
+  resave: true,
   saveUninitialized: true,
   cookie: { secure: true }
 }));
