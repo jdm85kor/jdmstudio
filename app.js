@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-var pkginfo = require('./package');
+var pkginfo = require('./pac이age');
 
 var index = require('./routes/index');
 var auth_login = require('./routes/auth_login');
@@ -50,6 +50,17 @@ passport.use(new GoogleStrategy({
     done(null, profile); 
   }
 ));
+
+function ensureAuthenticated(req,res,next){
+  if(req.isAuthenticated()){
+    console.log("log session");
+    console.log(req.session);
+    console.log("log user");
+    console.log(req.user);  
+    return next();
+  }
+  res.redirect('/');
+}
 
 var app = express();
 
