@@ -38,9 +38,6 @@ passport.use(new FacebookStrategy({
   callbackURL:pkginfo.oauth.facebook.callbackURL
   },
   function(accessToken,refreshToken,profile,done){
-    console.log("facebook profile");
-    console.log(profile);
-    console.log("finish facebook profile");
     done(null,profile);
   }
 ));
