@@ -3,10 +3,7 @@ var router = express.Router();
 var passport = require('passport');
 
 
-passport.deserializeUser(function(user,done){
-  console.log('deserialize');
-  done(null,user);
-});
+
 
 /* GET users page. */
 router.get('/',ensureAuthenticated, function(req, res) {
