@@ -20,6 +20,7 @@ var passport = require('passport')
 passport.serializeUser(function(user,done){
   console.log('serialize');
   console.log(user);
+  console.log('finish serialize');
   done(null,user);
 });
 
@@ -36,6 +37,7 @@ passport.use(new FacebookStrategy({
   function(accessToken,refreshToken,profile,done){
     console.log("facebook profile");
     console.log(profile);
+    console.log("finish facebook profile");
     done(null,profile);
   }
 ));
