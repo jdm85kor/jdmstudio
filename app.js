@@ -4,6 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('express-session');
 
 var pkginfo = require('./package');
 
@@ -18,6 +19,7 @@ var passport = require('passport')
 
 passport.serializeUser(function(user,done){
   console.log('serialize');
+  console.log(user);
   done(null,user);
 });
 
@@ -65,6 +67,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({ secret: 'jdm' }));
 app.use(passport.initialize());
 app.use(passport.session());
 
