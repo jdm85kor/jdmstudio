@@ -22,7 +22,7 @@ passport.serializeUser(function(user,done){
 
 passport.deserializeUser(function(obj,done){
   console.log('deserialize');
-  done(null,obj);
+  done(null,user);
 });
 
 passport.use(new FacebookStrategy({
