@@ -21,9 +21,9 @@ passport.serializeUser(function(user,done){
   done(null,user);
 });
 
-passport.deserializeUser(function(obj,done){
+passport.deserializeUser(function(user,done){
   console.log('deserialize');
-  done(null,obj);
+  done(null,user);
 });
 
 passport.use(new FacebookStrategy({
