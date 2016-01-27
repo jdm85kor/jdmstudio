@@ -9,14 +9,16 @@ router.get('/',ensureAuthenticated, function(req, res) {
   });
 });
 
-function ensureAuthenticated(req,res,next){
-  if(req.isAuthenticated()){
+var ensureAuthenticated = function(req,res,next){
+ // if(req.isAuthenticated()){
     console.log("log session");
     console.log(req.session);
     console.log("log user");
     console.log(req.user);  
-    return next();
-  }
+ //   return next();
+ // }
   res.redirect('/');
 }
+
+//
 module.exports = router;
