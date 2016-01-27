@@ -15,9 +15,9 @@ var ensureAuthenticated = function(req,res,next){
     console.log(req.session);
     console.log("log user");
     console.log(req.user);  
-    return next();
+  //  return next();
   //}
-  //res.redirect('/');
+  res.redirect('/');
 };
 
 //
