@@ -9,7 +9,7 @@ router.get('/',ensureAuthenticated, function(req, res) {
   });
 });
 
-var ensureAuthenticated = function(req,res,next){
+function ensureAuthenticated(req,res,next){
   if(req.isAuthenticated()){
     console.log("log session");
     console.log(req.session);
