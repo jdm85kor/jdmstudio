@@ -9,6 +9,7 @@ var pkginfo = require('./package');
 
 var index = require('./routes/index');
 var auth_login = require('./routes/auth_login');
+var users = require('./routes/users');
 var logout = require('./routes/logout');
 
 var passport = require('passport')
@@ -70,6 +71,10 @@ app.use('/',index);
 app.use('/auth',auth_login);
 /*   Routing  Log out   */
 app.use('/logout',logout);
+
+/*   Routing User page   */
+app.use('/users',users);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
