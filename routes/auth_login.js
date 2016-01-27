@@ -9,7 +9,7 @@ router.get('/facebook',passport.authenticate('facebook'));
 router.get('/facebook/callback',
   passport.authenticate('facebook', { failureRedirect: '/' }),
   function(req,res) {
-    res.redirect('/success');
+    res.redirect('/users');
   });
 
 /* google auth button */
@@ -22,7 +22,7 @@ router.get('/google', passport.authenticate('google', {
 /* callback auth callback */
 router.get('/google/callback',
  passport.authenticate('google', {
-  successRedirect: '/success',
+  successRedirect: '/users',
   failureRedirect: '/'
 }));
 
