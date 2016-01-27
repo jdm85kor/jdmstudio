@@ -16,7 +16,7 @@ function ensureAuthenticated(req,res,next){
 		console.log(req.user);	
 		return next();
 	}
-	//res.redirect('/');
+	res.redirect('/');
 }
 
 module.exports = router;
