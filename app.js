@@ -68,16 +68,10 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(session({
-  secret: 'jdm',
-  resave: true,
-  saveUninitialized: true,
-  cookie: { secure: true }
-}));
+app.use(session( { secret: 'jdm' } ) );
 app.use( passport.initialize() );
 app.use( passport.session() );
-
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/',index);

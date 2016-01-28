@@ -1,6 +1,5 @@
 var express = require('express');
 var router = express.Router();
-var passport = require('passport');
 
 /* facebook auth button */
 router.get('/facebook',passport.authenticate('facebook'));
