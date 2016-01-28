@@ -3,14 +3,14 @@ var router = express.Router();
 var passport = require('passport');
 
 function ensureAuthenticated(req,res,next){
-  //if(req.isAuthenticated()){
+  if(req.isAuthenticated()){
     //console.log("log session");
     //console.log(req.session);
     //console.log("log user");
     //console.log(req.user);  
     return next();
-  //}
-  //res.redirect('/');
+  }
+  res.redirect('/');
 }
 
 
