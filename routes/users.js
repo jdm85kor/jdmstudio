@@ -7,7 +7,7 @@ function ensureAuthenticated(req,res,next){
     console.log("log session");
     console.log(req.session);
     console.log("log user");
-    console.log(req.user);  
+    console.log(req.);  
    // return next();
   //}
   res.redirect('/');
