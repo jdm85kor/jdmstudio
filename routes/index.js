@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res) {
-	console.log(req.user);
+	console.log(req.session);
   	res.render('index', { title: 'JDMstudio'  	 				 
   });
  });
