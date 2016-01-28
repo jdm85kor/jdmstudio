@@ -2,17 +2,6 @@ var express = require('express');
 var router = express.Router();
 var passport = require('passport');
 
-
-
-
-/* GET users page. */
-router.get('/',ensureAuthenticated, function(req, res) {
-	
-  	res.render('users', { title: 'JDMstudio',
-  						  user : req.session.passport.user
-  });
-});
-
 function ensureAuthenticated(req,res,next){
   if(req.isAuthenticated()){
     console.log("log session");
@@ -23,6 +12,17 @@ function ensureAuthenticated(req,res,next){
   }
   res.redirect('/');
 }
+
+
+/* GET users page. */
+router.get('/',ensureAuthenticated, function(req, res) {
+	
+  	res.render('users', { title: 'JDMstudio',
+  						  user : req.session.passport.user
+  });
+});
+
+
 
 //
 module.exports = router;
