@@ -24,9 +24,9 @@ passport.serializeUser(function(user,done){
   done(null,user);  
 });
 
-passport.deserializeUser(function(obj,done){
+passport.deserializeUser(function(user,done){
   console.log('deserialize');
-  done(null,obj);
+  done(null,user);
 });
 
 passport.use(new FacebookStrategy({
@@ -35,7 +35,7 @@ passport.use(new FacebookStrategy({
   callbackURL:pkginfo.oauth.facebook.callbackURL,
   passReqToCallback: true
   },
-  function(accessToken,refreshToken,profile,done){
+  function(request,accessToken,refreshToken,profile,done){
     done(null,profile);
   }
 ));
