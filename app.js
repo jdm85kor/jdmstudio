@@ -18,14 +18,14 @@ var passport = require('passport')
   , GoogleStrategy = require('passport-google-oauth2').Strategy;
 
 passport.serializeUser(function(user,done){
-  console.log('serialize');
-  console.log(user);
-  console.log('finish serialize');
+  //console.log('serialize');
+  //console.log(user);
+  //console.log('finish serialize');
   done(null,user);  
 });
 
 passport.deserializeUser(function(user,done){
-  console.log('deserialize');
+  //console.log('deserialize');
   done(null,user);
 });
 
@@ -36,8 +36,8 @@ passport.use(new FacebookStrategy({
   passReqToCallback : true
   },
   function(req, accessToken, refreshToken, profile, done){
-    console.log(profile);
-    console.log("facebook profile");
+    //console.log(profile);
+    //console.log("facebook profile");
     done(null,profile);
   }
 ));
