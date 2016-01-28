@@ -19,7 +19,7 @@ var passport = require('passport')
 
 passport.serializeUser(function(user,done){
   console.log('serialize');
-  onsole.log(user);
+  console.log(user);
   console.log('finish serialize');
   done(null,user);  
 });
@@ -33,9 +33,9 @@ passport.use(new FacebookStrategy({
   clientID:pkginfo.oauth.facebook.FACEBOOK_APP_ID,
   clientSecret:pkginfo.oauth.facebook.FACEBOOK_APP_SECRET,
   callbackURL:pkginfo.oauth.facebook.callbackURL,
-  passReqToCallback: true
+  enableProof: true
   },
-  function(request, accessToken, refreshToken, profile, done){
+  function(req, accessToken, refreshToken, profile, done){
     console.log(profile);
     console.log("facebook profile");
     done(null,profile);

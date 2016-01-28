@@ -9,7 +9,7 @@ var passport = require('passport');
 router.get('/',ensureAuthenticated, function(req, res) {
 	
   	res.render('users', { title: 'JDMstudio',
-  						  user : req.user
+  						  user : req.session.passport.user
   });
 });
 
