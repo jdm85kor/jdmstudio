@@ -4,25 +4,17 @@ var passport = require('passport');
 
 function ensureAuthenticated(req,res,next){
   if(req.isAuthenticated()){
-    //console.log("log session");
-    //console.log(req.session);
-    //console.log("log user");
-    //console.log(req.user);  
     return next();
   }
   res.redirect('/');
 }
 
-
 /* GET users page. */
 router.get('/',ensureAuthenticated, function(req, res) {
-	console.log(req.session);
   	res.render('users', { title: 'JDMstudio'
   						, user : req.session.passport.user.displayName
   });
 });
-
-
 
 //
 module.exports = router;

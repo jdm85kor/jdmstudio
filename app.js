@@ -18,17 +18,15 @@ var passport = require('passport')
   , GoogleStrategy = require('passport-google-oauth2').Strategy;
 
 passport.serializeUser(function(user,done){
-  //console.log('serialize');
-  //console.log(user);
-  //console.log('finish serialize');
   done(null,user);  
 });
 
-passport.deserializeUser(function(user,done){
-  //console.log('deserialize');
+/*passport.deserializeUser(function(user,done){
+  console.log('^^^^^^^^^^^^^^^^^^^^');
+  console.log(user);
   done(null,user);
 });
-
+*/
 passport.use(new FacebookStrategy({
   clientID:pkginfo.oauth.facebook.FACEBOOK_APP_ID,
   clientSecret:pkginfo.oauth.facebook.FACEBOOK_APP_SECRET,
@@ -37,7 +35,6 @@ passport.use(new FacebookStrategy({
   },
   function(req, accessToken, refreshToken, profile, done){
     //console.log(profile);
-    //console.log("facebook profile");
     done(null,profile);
   }
 ));
@@ -49,8 +46,7 @@ passport.use(new GoogleStrategy({
     passReqToCallback   : true
   },
   function(req, accessToken, refreshToken, profile, done) {
-    console.log(profile);
-    console.log("google profile");
+    //console.log(profile);
     done(null, profile); 
   }
 ));
