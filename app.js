@@ -36,6 +36,8 @@ passport.use(new FacebookStrategy({
   passReqToCallback: true
   },
   function(request, accessToken, refreshToken, profile, done){
+    console.log(profile);
+    console.log("facebook profile");
     done(null,profile);
   }
 ));
@@ -47,6 +49,8 @@ passport.use(new GoogleStrategy({
     passReqToCallback   : true
   },
   function(request, accessToken, refreshToken, profile, done) {
+    console.log(profile);
+    console.log("google profile");
     done(null, profile); 
   }
 ));
