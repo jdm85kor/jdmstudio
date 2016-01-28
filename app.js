@@ -32,10 +32,9 @@ passport.deserializeUser(function(user,done){
 passport.use(new FacebookStrategy({
   clientID:pkginfo.oauth.facebook.FACEBOOK_APP_ID,
   clientSecret:pkginfo.oauth.facebook.FACEBOOK_APP_SECRET,
-  callbackURL:pkginfo.oauth.facebook.callbackURL,
-  enableProof: true
+  callbackURL:pkginfo.oauth.facebook.callbackURL
   },
-  function(req, accessToken, refreshToken, profile, done){
+  function(accessToken, refreshToken, profile, done){
     console.log(profile);
     console.log("facebook profile");
     done(null,profile);
