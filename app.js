@@ -18,13 +18,10 @@ var passport = require('passport')
   , GoogleStrategy = require('passport-google-oauth2').Strategy;
 
 passport.serializeUser(function(user,done){
-  /*console.log('serialize');
-  console.log(user);
+  console.log('serialize');
+  /*console.log(user);
   console.log('finish serialize');*/
-  done(null,user);
-  console.log("*********************");
-  console.log(session);
-  console.log("*********************");
+  done(null,user);  
 });
 
 passport.deserializeUser(function(obj,done){
@@ -35,7 +32,8 @@ passport.deserializeUser(function(obj,done){
 passport.use(new FacebookStrategy({
   clientID:pkginfo.oauth.facebook.FACEBOOK_APP_ID,
   clientSecret:pkginfo.oauth.facebook.FACEBOOK_APP_SECRET,
-  callbackURL:pkginfo.oauth.facebook.callbackURL
+  callbackURL:pkginfo.oauth.facebook.callbackURL,
+  passReqToCallback: true
   },
   function(accessToken,refreshToken,profile,done){
     done(null,profile);
@@ -46,7 +44,7 @@ passport.use(new GoogleStrategy({
     clientID:     pkginfo.oauth.google.client_id,
     clientSecret: pkginfo.oauth.google.client_secret,
     callbackURL:  pkginfo.oauth.google.redirect_uris,
-    passReqToCallback   : false
+    passReqToCallback   : true
   },
   function(request, accessToken, refreshToken, profile, done) {
     console.log("google profile");
