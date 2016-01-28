@@ -35,7 +35,7 @@ passport.use(new FacebookStrategy({
   callbackURL:pkginfo.oauth.facebook.callbackURL,
   passReqToCallback: true
   },
-  function(request,accessToken,refreshToken,profile,done){
+  function(request, accessToken, refreshToken, profile, done){
     done(null,profile);
   }
 ));
