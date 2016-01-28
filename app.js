@@ -21,12 +21,11 @@ passport.serializeUser(function(user,done){
   done(null,user);  
 });
 
-/*passport.deserializeUser(function(user,done){
-  console.log('^^^^^^^^^^^^^^^^^^^^');
-  console.log(user);
+passport.deserializeUser(function(user,done){
   done(null,user);
 });
-*/
+
+
 passport.use(new FacebookStrategy({
   clientID:pkginfo.oauth.facebook.FACEBOOK_APP_ID,
   clientSecret:pkginfo.oauth.facebook.FACEBOOK_APP_SECRET,
