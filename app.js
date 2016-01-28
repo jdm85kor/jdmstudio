@@ -19,8 +19,8 @@ var passport = require('passport')
 
 passport.serializeUser(function(user,done){
   console.log('serialize');
-  /*console.log(user);
-  console.log('finish serialize');*/
+  onsole.log(user);
+  console.log('finish serialize');
   done(null,user);  
 });
 
@@ -47,8 +47,6 @@ passport.use(new GoogleStrategy({
     passReqToCallback   : true
   },
   function(request, accessToken, refreshToken, profile, done) {
-    console.log("google profile");
-    console.log(profile);
     done(null, profile); 
   }
 ));
