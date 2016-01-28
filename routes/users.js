@@ -8,17 +8,17 @@ function ensureAuthenticated(req,res,next){
     //console.log(req.session);
     //console.log("log user");
     //console.log(req.user);  
-   // return next();
+    return next();
   //}
-  res.redirect('/');
+  //res.redirect('/');
 }
 
 
 /* GET users page. */
 router.get('/',ensureAuthenticated, function(req, res) {
 	
-  	res.render('users', { title: 'JDMstudio',
-  						  user : req.session.passport.user
+  	res.render('users', { title: 'JDMstudio'
+  						, user : req.session.passport.user.displayName
   });
 });
 
