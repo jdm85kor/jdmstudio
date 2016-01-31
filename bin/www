@@ -8,12 +8,6 @@ var app = require('../app');
 var debug = require('debug')('jdmstudio:server');
 var http = require('http');
 
-/** for chatting */
-var io = require('socket.io')(http);
-
-io.on('connection', function(socket){
-  console.log('a user connected');
-});
 
 /**
  * Get port from environment and store in Express.
@@ -27,6 +21,18 @@ app.set('port', port);
  */
 
 var server = http.createServer(app);
+
+/**
+* for chatting 
+*/
+var io = require('socket.io')(server);
+
+io.on('connection', function(socket){
+  console.log('a user connected');
+});
+
+
+
 
 /**
  * Listen on provided port, on all network interfaces.
