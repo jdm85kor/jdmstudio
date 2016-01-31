@@ -34,8 +34,6 @@ passport.use(new FacebookStrategy({
   passReqToCallback : true
   },
   function(req, accessToken, refreshToken, profile, done){
-    console.log("ppppppppppppppppppppppp");
-    console.log("profile : " + profile);
     done(null,profile);
   }
 ));
