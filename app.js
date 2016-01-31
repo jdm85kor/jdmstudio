@@ -19,7 +19,7 @@ var passport = require('passport')
 
 passport.serializeUser(function(user,done){
   done(null,user);
-  console.log("session : " + session);
+  console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!session : " + session);
 });
 
 passport.deserializeUser(function(user,done){
@@ -34,6 +34,7 @@ passport.use(new FacebookStrategy({
   passReqToCallback : true
   },
   function(req, accessToken, refreshToken, profile, done){
+    console.log("ppppppppppppppppppppppp");
     console.log("profile : " + profile);
     done(null,profile);
   }
