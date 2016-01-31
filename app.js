@@ -83,7 +83,7 @@ app.use('/logout',logout);
 app.use('/users',users);
 
 /*    Routing Test page   */
-app.use('/test');
+app.use('/test',test);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
