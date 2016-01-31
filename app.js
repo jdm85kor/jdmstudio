@@ -19,6 +19,7 @@ var passport = require('passport')
 
 passport.serializeUser(function(user,done){
   done(null,user);  
+  console.logs(user);
 });
 
 passport.deserializeUser(function(user,done){
