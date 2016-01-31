@@ -18,12 +18,11 @@ var passport = require('passport')
   , GoogleStrategy = require('passport-google-oauth2').Strategy;
 
 passport.serializeUser(function(user,done){
-  done(null,user);
-  console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!session : " + session);
+  done(null,user.displayName);
 });
 
 passport.deserializeUser(function(user,done){
-  done(null,user.displayName);
+  done(null,user);
 });
 
 
