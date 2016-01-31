@@ -1,17 +1,11 @@
+* { margin: 20px ; padding: 30px; box-sizing: borker-box; }
+
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-h1,button,a { margin: 20px ; padding: 0; box-sizing: borker-box; }
-
 a {
   color: #00B7FF;
 }
-form { background: #000; margin: 0; padding: 3px; position: fixed; bottom: 0; width: 90%; }
-form input { border: 0; padding: 5px; width: 80%; margin-right: .5%; }
-form button { width: 9%; background: rgb( 130,224,255); border: none; padding: 5px; }
-#messages { list-style-type: none; margin: 0; padding: 0; }
-#messages li {padding: 5px 5px; }
-#meesages li:nth-child(odd) { background: #eee; }
 
 
 

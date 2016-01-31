@@ -13,6 +13,10 @@ var auth_login = require('./routes/auth_login');
 var users = require('./routes/users');
 var logout = require('./routes/logout');
 
+/*  test page   */
+var test = require('./routes/test');
+
+
 var passport = require('passport')
   , FacebookStrategy = require('passport-facebook').Strategy
   , GoogleStrategy = require('passport-google-oauth2').Strategy;
@@ -78,6 +82,8 @@ app.use('/logout',logout);
 /*   Routing User page   */
 app.use('/users',users);
 
+/*    Routing Test page   */
+app.use('/test');
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
