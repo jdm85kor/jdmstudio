@@ -11,7 +11,7 @@ function ensureAuthenticated(req,res,next){
 
 /* GET users page. */
 router.get('/',ensureAuthenticated, function(req, res) {
-	console.log(req.session);
+	console.log(req);
   	res.render('users', { title: 'JDMstudio'
   						, user : req.session.passport.displayName
   });
