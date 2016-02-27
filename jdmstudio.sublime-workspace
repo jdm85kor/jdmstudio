@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"user",
+				"user"
+			],
+			[
+				"req",
+				"passReqToCallback"
+			],
+			[
 				"a",
 				"authenticate"
 			],
@@ -28,18 +36,36 @@
 	"buffers":
 	[
 		{
-			"file": "app.js",
+			"file": "routes/jdm.js",
 			"settings":
 			{
-				"buffer_size": 2700,
+				"buffer_size": 429,
+				"line_ending": "Unix",
+				"name": "jdm.js"
+			}
+		},
+		{
+			"file": "views/jdm.ejs",
+			"settings":
+			{
+				"buffer_size": 715,
+				"line_ending": "Unix",
+				"name": "jdm.ejs"
+			}
+		},
+		{
+			"file": "routes/index.js",
+			"settings":
+			{
+				"buffer_size": 214,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "package.json",
+			"file": "views/test.ejs",
 			"settings":
 			{
-				"buffer_size": 909,
+				"buffer_size": 1088,
 				"line_ending": "Unix"
 			}
 		},
@@ -47,7 +73,15 @@
 			"file": "views/users.ejs",
 			"settings":
 			{
-				"buffer_size": 294,
+				"buffer_size": 355,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "public/stylesheets/style.css",
+			"settings":
+			{
+				"buffer_size": 156,
 				"line_ending": "Unix"
 			}
 		}
@@ -96,21 +130,23 @@
 	],
 	"file_history":
 	[
-		"/Users/jdm/jdmstudio/views/error.ejs",
-		"/Users/jdm/jdmstudio/routes/auth_login.js",
-		"/Users/jdm/jdmstudio/routes/logout.js",
+		"/Users/jdm/jdmstudio/views/test.ejs",
 		"/Users/jdm/jdmstudio/app.js",
+		"/Users/jdm/jdmstudio/routes/test.js",
+		"/Users/jdm/jdmstudio/routes/logout.js",
+		"/Users/jdm/jdmstudio/views/error.ejs",
+		"/Users/jdm/jdmstudio/views/users.ejs",
+		"/Users/jdm/jdmstudio/package.json",
+		"/Users/jdm/jdmstudio/bin/www",
+		"/Users/jdm/jdmstudio/routes/auth_login.js",
+		"/Users/jdm/jdmstudio/routes/users.js",
+		"/Users/jdm/jdmstudio/views/index.ejs",
 		"/Users/jdm/jdmstudio/routes/index.js",
 		"/Users/jdm/jdmstudio/routes/auth_google.js",
 		"/Users/jdm/jdmstudio/routes/callback_facebook.js",
 		"/Users/jdm/jdmstudio/routes/callback_google.js",
-		"/Users/jdm/jdmstudio/package.json",
 		"/Users/jdm/jdmstudio/routes/auth_facebook.js",
-		"/Users/jdm/jdmstudio/views/index.ejs",
 		"/Users/jdm/jdmstudio/views/error.jade",
-		"/Users/jdm/jdmstudio/views/users.ejs",
-		"/Users/jdm/jdmstudio/routes/users.js",
-		"/Users/jdm/jdmstudio/bin/www",
 		"/Users/jdm/jdmstudio/routes/auth_facebook",
 		"/Users/jdm/Desktop/index.js",
 		"/Users/jdm/Desktop/index.ejs",
@@ -132,7 +168,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -179,56 +215,54 @@
 			[
 				{
 					"buffer": 0,
-					"file": "app.js",
+					"file": "routes/jdm.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2700,
+						"buffer_size": 429,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								234,
+								234
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"auto_name": "jdm.js",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "package.json",
+					"file": "views/jdm.ejs",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 909,
+						"buffer_size": 715,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								280,
+								280
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"auto_name": "jdm.ejs",
+							"syntax": "Packages/HTML/HTML.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -239,11 +273,11 @@
 				},
 				{
 					"buffer": 2,
-					"file": "views/users.ejs",
+					"file": "routes/index.js",
 					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 294,
+						"buffer_size": 214,
 						"regions":
 						{
 						},
@@ -256,13 +290,98 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/HTML/HTML.tmLanguage"
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "views/test.ejs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1088,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								85,
+								85
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 8.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "views/users.ejs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 355,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								85,
+								85
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "public/stylesheets/style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 156,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								28,
+								28
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
