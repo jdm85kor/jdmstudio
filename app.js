@@ -69,8 +69,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(session( {
      store: new RedisStore( {
-        host: ' localhost',
-        port: 6379
+        host: 'ec2-54-217-206-114.eu-west-1.compute.amazonaws.com',
+        port: 12479,
+        password: 'pc7egvk4ocuk596hioafm855mem',
+        url: 'redis://h:pc7egvk4ocuk596hioafm855mem@ec2-54-217-206-114.eu-west-1.compute.amazonaws.com:12479'
      }),
      secret: 'jdm' } ) );
 app.use( passport.initialize() );

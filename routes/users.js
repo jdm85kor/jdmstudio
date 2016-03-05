@@ -6,7 +6,7 @@ function ensureAuthenticated(req,res,next){
   if(req.isAuthenticated()){
     return next();
   }
-  res.redirect('/logout');
+  res.redirect('/');
 }
 
 /* GET users page. */
