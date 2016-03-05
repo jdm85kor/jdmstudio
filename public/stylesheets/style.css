@@ -6,6 +6,8 @@ body {
 a {
   color: #00B7FF;
 }
-hr { border-top:1px solid #9C9C9C; border-bottom:1px solid #F6F6F6; }
+hr { 
+	border-top:1px solid #9C9C9C; border-bottom:1px solid #F6F6F6; 
+}
 
 

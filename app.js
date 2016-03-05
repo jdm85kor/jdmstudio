@@ -12,7 +12,6 @@ var index = require('./routes/index');
 var auth_login = require('./routes/auth_login');
 var users = require('./routes/users');
 var logout = require('./routes/logout');
-var jdm = require('./routes/jdm');
 
 /*  test page   */
 var test = require('./routes/test');
