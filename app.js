@@ -69,7 +69,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(session( {
      store: new RedisStore( {
-        host: 'localhost',
+        host: ' localhost',
         port: 6379
      }),
      secret: 'jdm' } ) );
