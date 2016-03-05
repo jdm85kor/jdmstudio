@@ -85,9 +85,6 @@ app.use('/users',users);
 /*    Routing Test page   */
 app.use('/test',test);
 
-/*    Routing introduce, resume page   */
-app.use('/jdm',jdm);
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
