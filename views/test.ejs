@@ -26,6 +26,7 @@
 	<h1><%= title %></h1>
 	<h1><%= user %> 님 접근 권한이 없습니다.</h1>
 	<button onclick="location.href='/logout'">logout</button>
+
 	<ul id="messages"></ul>
 	<form action="">
 		<input id="m" autocomplete="off" /><button>Send</button>
@@ -33,7 +34,11 @@
 
 	<script src="/socket.io/socket.io.js"></script>
 	<script>
-		var socket = io();
+		var socket = io.connect('http://jdmstudio.herokuapp.com/');
+		socket.on('news', function (data) {
+	    console.log(data);
+	    socket.emit('my other event', { my: 'data' });
+		  });
 	</script>
 
 	
