@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var passport = require('passport');
+var io = require('socket.io')(server);
 
 function ensureAuthenticated(req,res,next){
   if(req.isAuthenticated()){
@@ -16,6 +17,8 @@ router.get('/',ensureAuthenticated, function(req, res) {
   						, user : req.user
   });
 });
+
+
 
 //
 module.exports = router;
