@@ -34,7 +34,8 @@
 
 	<script src="/socket.io/socket.io.js"></script>
 	<script>
-		var socket = io.connect('http://jdmstudio.herokuapp.com/');
+		// var socket = io.connect('http://jdmstudio.herokuapp.com/');
+		var socket = io('/my-namespace');
 		socket.on('news', function (data) {
 	    console.log(data);
 	    socket.emit('my other event', { my: 'data' });
@@ -44,3 +45,14 @@
 	
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
