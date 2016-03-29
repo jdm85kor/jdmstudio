@@ -2,7 +2,7 @@
 <html>
 <head>
   	<meta charset="utf-8">
- 	<title><%= title %> Welcaom <%= user %></title>
+ 	<title><%= title %> Welcome <%= user %></title>
 
  	<!-- styles -->
  	<style>
@@ -26,12 +26,33 @@
 	<h1><%= title %></h1>
 	<h1><%= user %> 님 접근 권한이 없습니다.</h1>
 	<button onclick="location.href='/logout'">logout</button>
+
 	<ul id="messages"></ul>
 	<form action="">
 		<input id="m" autocomplete="off" /><button>Send</button>
 	</form>
-	
+
+	<script src="/socket.io/socket.io.js"></script>
+	<script>
+		// var socket = io.connect('http://jdmstudio.herokuapp.com/');
+		var socket = io('/my-namespace');
+		socket.on('news', function (data) {
+	    console.log(data);
+	    socket.emit('my other event', { my: 'data' });
+		  });
+	</script>
 
 	
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+

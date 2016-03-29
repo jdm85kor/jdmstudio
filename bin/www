@@ -23,14 +23,21 @@ app.set('port', port);
 var server = http.createServer(app);
 
 /**
+* socket.io 
 * for chatting 
 */
 var io = require('socket.io')(server);
 
-io.on('connection', function(socket){
-  console.log('a user connected');
+var nsp = io.of('my-namespace');
+nsp.on('connection', function(socket){
+  socket.join()
+  console.log('***************a user connected*********************');
+  // socket.emit('news', { hello: 'world' });
+  // socket.on('my other event', function (data) {
+  //   console.log(data);
+  // });
 });
-
+nsp.emit('news','everyone!');
 
 
 

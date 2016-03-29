@@ -5,6 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
+var RedisStore = require('connect-redis')(session);
 
 var pkginfo = require('./package');
 
@@ -66,10 +67,17 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(session( { secret: 'jdm' } ) );
+app.use(session( {
+     store: new RedisStore( {
+        host: 'ec2-54-217-206-114.eu-west-1.compute.amazonaws.com',
+        port: 12479,
+        password: 'pc7egvk4ocuk596hioafm855mem',
+        url: 'redis://h:pc7egvk4ocuk596hioafm855mem@ec2-54-217-206-114.eu-west-1.compute.amazonaws.com:12479'
+     }),
+     secret: 'jdm' } ) );
 app.use( passport.initialize() );
 app.use( passport.session() );
-app.use(express.static(path.join(__dirname, 'public')));
+app.use( express.static(path.join(__dirname, 'public')) );
 
 
 app.use('/',index);
@@ -84,6 +92,7 @@ app.use('/users',users);
 
 /*    Routing Test page   */
 app.use('/test',test);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
