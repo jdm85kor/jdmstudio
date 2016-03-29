@@ -17,7 +17,7 @@ router.get('/', function(req, res,next) {
 });
 
 router.get('/heapdump',function(req,res,next){
-    var filename = '../dump/heapdump' + Date.now() + '.heapsnapshot';
+    var filename = '/dump/heapdump' + Date.now() + '.heapsnapshot';
     heapdump.writeSnapshot(filename);
     res.send('Heapdump has been generated in ' + filename);
 });
