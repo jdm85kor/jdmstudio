@@ -19,14 +19,14 @@
 		  background-color: #e7e7e7;
 		  border: none;
 		  border-radius: 1em;
-		  box-shadow: 0 1em #999;
+		  box-shadow: 0 0.5em #999;
     }
 
 	.button:hover {background-color: #55555}
 
 	.button:active {
 	  background-color: #55555;
-	  box-shadow: 0 0.5em #666;
+	  box-shadow: 0 0.2em #666;
 	  transform: translateY(0.3em);
 	}
 	.left_side {
@@ -36,7 +36,7 @@
 	}
 	.right_side {
 		position: absolute;
-		right:80%;
+		right:0%;
 		width:20%;
 	}
 
@@ -50,6 +50,7 @@
 	<div class="right_side">
 	    <button class="button" onclick="location.href='/logout'">logout</button>
 	</div>
+	<br>
 	<iframe src='http://cdn.tradingeconomics.com/embed/?s=kospi
 				&v=201603300945n
 				&forecast=2
