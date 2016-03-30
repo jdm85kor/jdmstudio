@@ -39,11 +39,12 @@
 	}
 	.right_side {
 		position: absolute;
-		padding : 2em;
+		padding : 1em;
 		right:0%;
 		width:15%;
 	}
 	.forecast_chart {
+		vertical-align : middle;
 		position: absolute;
 		top : 40%;
 	}
@@ -59,8 +60,8 @@
 	    <button class="button" onclick="location.href='/logout'">logout</button>
 	</div>
 	<br>
-	<div class="forecast_chart">
-		<iframe src='http://cdn.tradingeconomics.com/embed/?s=kospi
+	<!-- <div class="forecast_chart"> -->
+		<iframe class="forecast_chart" src='http://cdn.tradingeconomics.com/embed/?s=kospi
 					&v=201603300945n
 					&forecast=2
 					&d1=19160101
@@ -72,7 +73,7 @@
 		        width ='600'  
 		        frameborder='0' 
 		        scrolling='no'>
-		 </iframe>
+		 <!-- </iframe> -->
 	</div>
 </body>
 </html>
