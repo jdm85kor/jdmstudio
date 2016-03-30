@@ -6,11 +6,36 @@
 
  	<!-- styles -->
  	<link type="text/css" href="stylesheets/style.css" rel="stylesheet">
+ 	<style type="text/css">
+ 	.button {
+		  display: inline-block;
+		  padding: 15px 25px;
+		  font-size: 24px;
+		  cursor: pointer;
+		  text-align: center;	
+		  text-decoration: none;
+		  outline: none;
+		  color: #fff;
+		  background-color: #e7e7e7;
+		  border: none;
+		  border-radius: 15px;
+		  box-shadow: 0 9px #999;
+    }
 
+	.button:hover {background-color: #55555}
+
+	.button:active {
+	  background-color: #55555;
+	  box-shadow: 0 5px #666;
+	  transform: translateY(4px);
+	}
+
+ 	</style>
 </head>
 <body>	
 	
-	<h1><%= user %> 님 접근 권한이 없습니다.<button onclick="location.href='/logout'">logout</button></h1>
+	<h1><%= user %> 님 접근 권한이 없습니다.</h1>
+	<button class="button" onclick="location.href='/logout'">logout</button>
 	<iframe src='http://cdn.tradingeconomics.com/embed/?s=kospi
 				&v=201603300945n
 				&forecast=2
