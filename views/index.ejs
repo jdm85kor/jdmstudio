@@ -8,14 +8,28 @@
  	<link type="text/css" href="stylesheets/style.css" rel="stylesheet">
  	
  	<style type="text/css">
- 		div.index_img {
+ 		div {
  			vertical-align : middle;
  		}
- 		div.title {
+ 		h1 {
  			padding : 1em;
  		}
- 		img {
+ 		div.index_img img{
  			width : 100%;
+ 			height: auto;
+ 		}
+ 		left-side{
+ 			position: absolute;
+ 			left: 0px;
+ 			width: 50%;
+ 		}
+ 		right-side{
+ 			position: absolute;
+ 			right: 0px;
+ 			width: 50%;
+ 		}
+ 		div img{
+ 			width: 6%;
  			height: auto;
  		}
  	</style>
@@ -23,16 +37,18 @@
 
 </head>
 <body>	
-	<div class="title"><h1><%= "  "+title %></h1></div>
+	<h1><%=title %></h1>
 	<div class="index_img">
 		<img src="/images/CAM00629.jpg">
 	</div>
-	<a href='/auth/facebook'>facebook login</a><br>
-	<br>
-	<br>
-	<a href='/auth/google'>google login</a>
-
-
+	<div class="left-side">
+		<a href='/auth/facebook'><img src="/images/fb-logo.jpg"></a>
+	</div>
+	<div class="right-side">
+		<a href='/auth/google'><img src="/images/google-plus.png"></a>
+	</div>
 	
+
+
 </body>
 </html>
