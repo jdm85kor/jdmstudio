@@ -11,6 +11,9 @@
  		div.index_img {
  			vertical-align : middle;
  		}
+ 		div.title {
+ 			padding : 1em;
+ 		}
  		img {
  			width : 100%;
  			height: auto;
@@ -20,11 +23,11 @@
 
 </head>
 <body>	
-	<h1><%= title %></h1>
+	<div class="title"><h1><%= "  "+title %></h1></div>
 	<div class="index_img">
 		<img src="/images/CAM00629.jpg">
 	</div>
-	<a href='/auth/facebook'><!--<img src="/images/img_facebook.png">-->facebook login</a><br>
+	<a href='/auth/facebook'>facebook login</a><br>
 	<br>
 	<br>
 	<a href='/auth/google'>google login</a>
