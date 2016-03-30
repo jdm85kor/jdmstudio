@@ -43,11 +43,13 @@
 		right:0%;
 		width:15%;
 	}
-	iframe.forecast_chart {
-		vertical-align : middle;
-
+	.forecast_chart {
 		position: absolute;
 		top : 40%;
+		width:100%;
+	}
+	iframe {
+		vertical-align : middle;
 	}
 
  	</style>
@@ -58,11 +60,11 @@
 		<h1><%= user %> 님 접근 권한이 없습니다.</h1>
 	</div>
 	<div class="right_side">
-	    <button class="button" onclick="location.href='/logout'">logout</button>
+	    <button class="button" onclick=" location.href='/logout'">logout</button>
 	</div>
 	<br>
-	<!-- <div class="forecast_chart"> -->
-		<iframe class="forecast_chart" src='http://cdn.tradingeconomics.com/embed/?s=kospi
+	<div class="forecast_chart">
+		<iframe  src='http://cdn.tradingeconomics.com/embed/?s=kospi
 					&v=201603300945n
 					&forecast=2
 					&d1=19160101
@@ -75,6 +77,6 @@
 		        frameborder='0' 
 		        scrolling='no'>
 		 </iframe>
-	<!-- </div> -->
+	</div>
 </body>
 </html>
