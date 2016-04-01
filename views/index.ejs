@@ -11,7 +11,7 @@
  		div {
  			vertical-align : middle;
  		}
- 		div.title_field {
+ 		div .title_field {
  			position: fixed;
  			left : 0%;
  			width: 80%;
@@ -45,11 +45,13 @@
  			top : 0;
  			height: 5em;
  		}
- 		div.index_img {
+ 		div .index_img {
+ 			margin : 0;
+ 			padding: 0;
  			position: relative;
  			top : 5em;
  		}
- 		div.index_img img{
+ 		div .index_img img {
  			width : 100%;
  			height: auto;
  		}
@@ -57,8 +59,9 @@
  	</style>
 </head>
 <body>	
+    <div id = "empty_title"></div>
 	<div class="title_filed">
-    <span class="title_text"><%= title %></span>
+        <span class="title_text"><%= title %></span>
     </div>
     <div class="login_first">
 	    <a href='/auth/facebook'><img src="/images/fb-logo.jpg"></a>
@@ -66,7 +69,7 @@
 	<div class="login_second">
 	    <a href='/auth/google'><img src="/images/google-plus.png"></a>
 	</div>
-	<div id = "empty_title"></div>
+	
 	<div class="index_img">
 		<img src="/images/CAM00629.jpg">
 	</div>
