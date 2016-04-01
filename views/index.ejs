@@ -11,12 +11,15 @@
  		div {
  			vertical-align : middle;
  		}
- 		h1 {
+ 		div.title_field {
  			position: fixed;
  			left : 0%;
  			width: 80%;
- 			padding : 1em;
- 			margin : 0em;
+ 			padding : 0.5em;
+ 			margin : 0.5em;
+ 		}
+ 		.title_text {
+ 			font-size : 2em;
  		}
  		.login_first {
  			position : fixed;
@@ -53,8 +56,9 @@
  	</style>
 </head>
 <body>	
-
-    <h1><%= title %></h1>
+	<div class="title_filed">
+    <span class="title_text"><%= title %></span>
+    </div>
     <div class="login_first">
 	    <a href='/auth/facebook'><img src="/images/fb-logo.jpg"></a>
 	</div>
