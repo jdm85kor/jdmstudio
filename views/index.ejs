@@ -27,32 +27,34 @@
  			font-size : 2em;
  			font-weight : bold;
  		}
- 		.login_first {
- 			position : fixed;
- 			padding : 1em;
- 			margin  : 0em;
- 			right: 10%;
+ 		.login_button {
+ 			position :fixed;
+ 			padding :0.5em;
+ 			margin : 0.5em;
+ 			right : 0;
+ 			width:20%;
+ 		}
+ 		.first {
+ 			left: 0;
  			width: 10%;
  		}
- 		.login_second {
- 			position : fixed;
- 			padding : 1em;
- 			margin  : 0em;
- 			right: 0%;
+ 		.second {
+ 			right: 0;
  			width: 10%;
  		}
- 		div img{
+ 		.first ,
+ 		.second img{
  			width: 50%;
  			height: auto;
  		}
  		
- 		div .index_img {
+ 		div.index_img {
  			margin : 0;
  			padding: 0;
  			position: relative;
  			top : 5em;
  		}
- 		div .index_img img {
+ 		div.index_img img {
  			width : 100%;
  			height: auto;
  		}
@@ -64,13 +66,14 @@
 	<div class="title_filed">
         <span class="title_text"><%= title %></span>
     </div>
-    <div class="login_first">
-	    <a href='/auth/facebook'><img src="/images/fb-logo.jpg"></a>
+    <div class="login_button">
+        <div class="first">
+	        <a href='/auth/facebook'><img src="/images/fb-logo.jpg"></a>
+	    </div>
+	    <div class="second">
+	        <a href='/auth/google'><img src="/images/google-plus.png"></a>
+	    </div>
 	</div>
-	<div class="login_second">
-	    <a href='/auth/google'><img src="/images/google-plus.png"></a>
-	</div>
-	
 	<div class="index_img">
 		<img src="/images/CAM00629.jpg">
 	</div>
