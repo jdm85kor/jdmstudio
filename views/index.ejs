@@ -12,22 +12,25 @@
  			vertical-align : middle;
  		}
  		h1 {
+ 			position: absolute;
+ 			left : 0%;
+ 			width: 80%;
  			padding : 1em;
  			margin  : 0em;
  		}
- 		div.index_img img{
- 			width : 100%;
- 			height: auto;
- 		}
- 		.left-side{
+ 		.login_first {
  			position: absolute;
  			left: 40%;
  			width: 10%;
  		}
- 		.right-side{
+ 		.login_second {
  			position: absolute;
  			right: 40%;
  			width: 10%;
+ 		}
+ 		div.index_img img{
+ 			width : 100%;
+ 			height: auto;
  		}
  		div img{
  			width: 40%;
@@ -37,17 +40,14 @@
 </head>
 <body>	
 	<h1><%= title %></h1>
+	<div class="login_first">
+		<a href='/auth/facebook'><img src="/images/fb-logo.jpg"></a>
+	</div>
+	<div class="login_second">
+		<a href='/auth/google'><img src="/images/google-plus.png"></a>
+	</div>
 	<div class="index_img">
 		<img src="/images/CAM00629.jpg">
 	</div>
-	<div class="left-side">
-		<a href='/auth/facebook'><img src="/images/fb-logo.jpg"></a>
-	</div>
-	<div class="right-side">
-		<a href='/auth/google'><img src="/images/google-plus.png"></a>
-	</div>
-	
-
-
 </body>
 </html>
