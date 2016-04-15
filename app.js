@@ -89,12 +89,12 @@ app.use( express.static(path.join(__dirname, 'public')) );
 
 
 
-var mongoclient = MongoClient.connect(dbUrl,function(err,db){
+MongoClient.connect(dbUrl,function(err,db){
   console.log("Connected correctly to server.");
   db.close();
 });
 
-mongoclient();
+
 // var mongoclient = new MongoClient(new MongoServer('mongodb://jdm:smspeed1@ds013599.mlab.com:13599/heroku_0tlc86rm',
 //                                                   27017,
 //                                                   {'native_parser':true}));
