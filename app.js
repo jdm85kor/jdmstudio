@@ -12,6 +12,7 @@ var pkginfo = require('./package');
 // MongoDB
 var MongoClient = require('mongodb').MongoClient;
 var MongoServer = require('mongodb').Server;
+//var dbUrl = 'mongodb://<dbuser>:<dbpassword>@ds013599.mlab.com:13599/heroku_0tlc86rm';
 
 
 
@@ -87,7 +88,9 @@ app.use( passport.session() );
 app.use( express.static(path.join(__dirname, 'public')) );
 
 
-var mongoclient = new MongoClient(new MongoServer('mongodb://<dbuser>:<dbpassword>@ds013599.mlab.com:13599/heroku_0tlc86rm',27017,{'native_parser':true}));
+var mongoclient = new MongoClient(new MongoServer('mongodb://jdm:smspeed1@ds013599.mlab.com:13599/heroku_0tlc86rm',
+                                                  27017,
+                                                  {'native_parser':true}));
 var db = mongoclient.db('db');
 
 
