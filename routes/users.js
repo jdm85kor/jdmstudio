@@ -25,7 +25,7 @@ router.get('/',ensureAuthenticated, function(req, res) {
   	res.render('users', { title: 'JDMstudio'
   						, user : req.user
   });
-  
+  /*  insert db code  */
 });
 
 //
