@@ -1,12 +1,13 @@
 # jdmstudio
 그 동안은 Node.js 위에 여러가지 라이브러리를 추가하면서 기능들을 살펴보았습니다.
 현재까지 사용된 Nodejs package
-web framwork : express v4.0
-session store : redis
-login : passport (facebook, google)
-chatting : socketio
-db : mongodb
-server : heroku
+- web framwork : express v4.0
+- session store : redis
+- login : passport (facebook, google)
+- chatting : socketio
+- db : mongodb
+- server : heroku
+- front css : pure svg
 
 //////////////////////////////////////////////////////////////////////////////////
 
