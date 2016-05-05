@@ -9,6 +9,14 @@ var RedisStore = require('connect-redis')(session);
 
 var pkginfo = require('./package');
 
+// MongoDB
+var MongoClient = require('mongodb').MongoClient;
+//var MongoServer = require('mongodb').Server;
+var dbUrl = 'mongodb://jdm:smspeed1@ds013599.mlab.com:13599/heroku_0tlc86rm';
+
+
+
+// Web page RESTapi
 var index = require('./routes/index');
 var auth_login = require('./routes/auth_login');
 var users = require('./routes/users');
@@ -78,6 +86,19 @@ app.use(session( {
 app.use( passport.initialize() );
 app.use( passport.session() );
 app.use( express.static(path.join(__dirname, 'public')) );
+
+
+
+MongoClient.connect(dbUrl,function(err,db){
+  console.log("Connected correctly to server.");
+  db.close();
+});
+
+
+// var mongoclient = new MongoClient(new MongoServer('mongodb://jdm:smspeed1@ds013599.mlab.com:13599/heroku_0tlc86rm',
+//                                                   27017,
+//                                                   {'native_parser':true}));
+// var db = mongoclient.db('db');
 
 
 app.use('/',index);
