@@ -26,6 +26,7 @@ var logout = require('./routes/logout');
 var test = require('./routes/test');
 var dump = require('./routes/heapdump');
 var pure = require('./routes/pure');
+var list = require('./routes/list');
 
 var passport = require('passport')
   , FacebookStrategy = require('passport-facebook').Strategy
@@ -119,6 +120,8 @@ app.use('/test',test);
 *      /leak , /leak/heapdump      
 */
 app.use('/pure',pure);
+
+app.use('/list',list);
 
 
 // catch 404 and forward to error handler
