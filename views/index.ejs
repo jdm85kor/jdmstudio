@@ -6,6 +6,8 @@
 
  	<!-- styles -->
  	<link type="text/css" href="stylesheets/style.css" rel="stylesheet">
+
+ 	<link type="text/css" href="stylesheets/index.css" rel="stylesheet">
  	
  	<style type="text/css">
  		div.title_field {
@@ -60,7 +62,28 @@
  	</style>
 </head>
 <body>
-	<div class="title_field">
+  <div class="index_container">
+    <div class="svg_img">
+      <svg width=100% height=100%>
+        <defs>
+          <filter id='Blur'>
+            <feGaussianBlur in="SourceGraphic" stdDeviation=1 />
+          </filter>
+          <mask id='mask_three_line'>
+            <rect x=0 y=0% width=100% height=33% fill=white />
+            <rect x=0 y=33% width=100% height=33% fill=gray />
+            <rect x=0 y=66% width=100% height=34% fill=red />
+          </mask>
+        </defs>
+
+        <image x=0 y=0 width=100% height=100% xlink:href='images/index_img.jpg'  mask='url(#mask_three_line)' filter='url(#Blur)'/>
+      </svg>
+    </div>
+
+  </div>
+
+
+	<!-- <div class="title_field">
         <span class="title_text"><%= title %></span>
     </div>
     <div class="login_field">
@@ -73,6 +96,6 @@
 	</div>
 	<div class="index_img">
 		<img src="/images/CAM00629.jpg">
-	</div>
+	</div> -->
 </body>
 </html>
