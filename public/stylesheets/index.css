@@ -20,8 +20,9 @@ body {
 
 }
 .index_container .index_title {
-  y: 30%;
-  font-size: 30;
+  
+  y="200";
+  font-size: "30";
 }
 .index_login {
   z-index: 1;
