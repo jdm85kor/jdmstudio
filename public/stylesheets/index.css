@@ -22,7 +22,7 @@ body {
 .index_title {
   font-weight: bold;
   color: black;
-  font-size:"20px";
+  font-size:"10em";
 }
 .index_login {
   z-index: 1;
