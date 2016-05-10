@@ -19,8 +19,9 @@ body {
 .index img { 
 
 }
-.index_container .index_title {
-  
+.index_title {
+  font-weight: bold;
+  color: black;
   font-size:"20px";
 }
 .index_login {
@@ -37,4 +38,16 @@ body {
 }
 .is-center {
     text-align: center;
+}
+@media (min-width: 48em) {
+
+  .splash-head {
+    font-size: 250%;
+  }
+}
+@media (min-width: 78em) {
+    /* We increase the header font size even more */
+    .splash-head {
+        font-size: 300%;
+    }
 }
