@@ -19,3 +19,10 @@ body {
 .index img { 
 
 }
+.index_login {
+  z-index: 1;
+  width: auto;
+  height: 30%;
+  top: 70%;
+  
+}
