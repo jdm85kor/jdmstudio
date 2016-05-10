@@ -42,13 +42,13 @@ body {
 }
 @media (min-width: 48em) {
 
-  .splash-head {
+  .index_title {
     font-size: 250%;
   }
 }
 @media (min-width: 78em) {
     /* We increase the header font size even more */
-    .splash-head {
+    .index_title {
         font-size: 300%;
     }
 }
