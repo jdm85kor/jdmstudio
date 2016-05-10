@@ -23,10 +23,14 @@ body {
   z-index: 1;
   width: auto;
   height: 30%;
+  top: 70%;
   
   position: absolute;
 
 }
 .index_login_icon {
 
+}
+.is-center {
+    text-align: center;
 }
