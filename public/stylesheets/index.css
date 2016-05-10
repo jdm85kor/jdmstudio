@@ -40,6 +40,12 @@ body {
 .is-center {
     text-align: center;
 }
+@media (min-width: 35.5em) {
+
+  .index_title {
+    font-size: 300%;
+  }
+}
 @media (min-width: 48em) {
 
   .index_title {
