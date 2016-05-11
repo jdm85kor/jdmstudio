@@ -12,55 +12,6 @@
 
  	<link type="text/css" href="stylesheets/index.css" rel="stylesheet">
  	
- 	<style type="text/css">
- 		div.title_field {
- 			z-index : 2;
- 			position: fixed;
- 			left : 0%;
- 			width: 75%;
- 			padding : 1em;
- 			margin : 0em;
- 		}
- 		.title_text {
- 			font-size : 2em;
- 			font-weight : bold;
- 		}
- 		.login_field {
- 			position :fixed;
- 			z-index : 2;
- 			padding :0;
- 			margin : 0;
- 			right : 0;
- 			width: 25%;
- 		}
- 		.first {
- 			position : absolute;
- 			left: 10%;
- 			margin : 0;
- 			width: 30%;
- 		}
- 		.second {
- 			position : absolute;
- 			right: 10%;
- 			margin : 0;
- 			width: 30%;
- 		}
- 		.first img,
- 		.second img{
- 			width  :  80%;
- 			height : auto;
- 		}
- 		div.index_img {
- 			margin : 0;
- 			padding: 0;
- 			position: relative;
- 			top : 5em;
- 		}
- 		div.index_img img {
- 			z-index : 1;
- 			width : 100%;
- 			height: auto;
- 		}
  		
  	</style>
 </head>
@@ -73,7 +24,7 @@
             <feGaussianBlur in="SourceGraphic" stdDeviation=1 />
           </filter>
           <mask id='mask_three_line'>
-            <rect x=0 y=0% width=100% height=33% fill=white />
+            <rect x=0 y=0% width=100% height=33% fill=gray />
             <rect x=0 y=33% width=100% height=33% fill=red />
             <rect x=0 y=66% width=100% height=34% fill=gray />
           </mask>
@@ -89,10 +40,10 @@
   </div>
   <div class="index_login">
     <svg width=100% height=100% >
-      <a href="/auth/facebook" >
+      <a xlink:href="/auth/facebook" >
         <image x=0 y=0 width=30% height=30% xlink:href='/images/facebook_icon.png'/>
       </a>
-      <a href="/auth/google" >
+      <a xlink:href="/auth/google" >
         <image x=50% y=0 width=30% height=30% xlink:href='/images/google-icon.png'/>
       </a>
 
@@ -103,20 +54,5 @@
 
   </div>
 
-
-	<!-- <div class="title_field">
-        <span class="title_text"><%= title %></span>
-    </div>
-    <div class="login_field">
-        <div class="first">
-	        <a href='/auth/facebook'><img src="/images/facebook_icon.png"></a>
-	    </div>
-	    <div class="second">
-	        <a href='/auth/google'><img src="/images/google-plus.png"></a>
-	    </div>
-	</div>
-	<div class="index_img">
-		<img src="/images/CAM00629.jpg">
-	</div> -->
 </body>
 </html>

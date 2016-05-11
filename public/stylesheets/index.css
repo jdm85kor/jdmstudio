@@ -22,11 +22,10 @@ body {
 .index_title {
   font-weight: bold;
   color: black;
-  font-size:"10em";
+  font-size:"30px";
 }
 .index_login {
   z-index: 1;
-  width: auto;
   width: 100%;
   height: auto;
   top: 70%;
@@ -46,13 +45,13 @@ body {
     font-size: 300%;
   }
 }
-@media (min-width: 48em) {
+@media screen and (min-width: 48em) {
 
   .index_title {
     font-size: 300%;
   }
 }
-@media (min-width: 78em) {
+@media screen and (min-width: 78em) {
     /* We increase the header font size even more */
     .index_title {
         font-size: 300%;
