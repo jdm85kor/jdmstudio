@@ -14,7 +14,7 @@ body {
     height: 70%;
     top: 0;
     left: 0;
-    position: absolute;
+    position: relative;
 }
 .index img { 
 
@@ -24,6 +24,11 @@ body {
   color: black;
   font-size:"30px";
   margin: 0 auto;
+  position: absolute;
+  width: 30%;
+  top: 40%;
+  height: auto;
+  
 }
 .index_login {
   z-index: 1;
@@ -32,6 +37,7 @@ body {
   top: 70%;
   left: 0;
   position: absolute;
+
 
 }
 .index_login_icon {
