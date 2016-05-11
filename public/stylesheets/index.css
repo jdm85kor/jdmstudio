@@ -51,9 +51,15 @@ body {
     font-size: 50px;
   }
 }
-@media (min-width: 78em) {
+@media screen and (min-width: 64em) {
+
+  .index_title {
+    font-size: 60px;
+  }
+}
+@media screen and (min-width: 78em) {
     /* We increase the header font size even more */
     .index_title {
-        font-size: 300%;
+        font-size: 70px;
     }
 }
