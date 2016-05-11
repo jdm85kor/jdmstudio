@@ -23,17 +23,17 @@
           <filter id='Blur'>
             <feGaussianBlur in="SourceGraphic" stdDeviation=1 />
           </filter>
-          <mask id='mask_three_line'>
-            <rect x=0 y=0% width=100% height=33% fill=gray />
-            <rect x=0 y=33% width=100% height=33% fill=red />
-            <rect x=0 y=66% width=100% height=34% fill=gray />
-          </mask>
+          <!--<mask id='mask_three_line'>-->
+          <!--  <rect x=0 y=0% width=100% height=33% fill=gray />-->
+          <!--  <rect x=0 y=33% width=100% height=33% fill=red />-->
+          <!--  <rect x=0 y=66% width=100% height=34% fill=gray />-->
+          <!--</mask>-->
         </defs>
 
-        <image x=0 y=0 width=100% height=100% xlink:href='/images/index_img.jpg'  mask='url(#mask_three_line)' />
-        <!-- option : filter='url(#Blur)' -->
+        <image x=0 y=0 width=100% height=100% xlink:href='/images/index_img.jpg'  />
+        <!-- option : filter='url(#Blur)'  mask='url(#mask_three_line)'-->
         
-        <text x="35%" y="50%" class="index_title"> JDM studio </text>
+        <!--<text x="35%" y="50%" class="index_title"> JDM studio </text>-->
       </svg>
     <!-- </div> -->
 
