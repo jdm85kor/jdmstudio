@@ -30,7 +30,7 @@ body {
   height: 30%;
   top: 70%;
   left: 0;
-  position: relative;
+  position: absolute;
 
 }
 .index_login_icon {
