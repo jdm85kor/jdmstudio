@@ -10,7 +10,7 @@ body {
 }
 .index_container {
     z-index: 1;
-    width: 100%;
+    width: auto;
     height: 70%;
     top: 0;
     left: 0;
@@ -26,8 +26,8 @@ body {
 }
 .index_login {
   z-index: 1;
-  width: 100%;
-  height: auto;
+  width: auto;
+  height: 30%;
   top: 70%;
   left: 0;
   position: absolute;
@@ -39,19 +39,19 @@ body {
 .is-center {
     text-align: center;
 }
-@media (min-width: 35.5em) {
+@media screen and (min-width: 35.5em) {
 
   .index_title {
-    font-size: 300%;
+    font-size: 40px;
   }
 }
 @media screen and (min-width: 48em) {
 
   .index_title {
-    font-size: 300%;
+    font-size: 50px;
   }
 }
-@media screen and (min-width: 78em) {
+@media (min-width: 78em) {
     /* We increase the header font size even more */
     .index_title {
         font-size: 300%;
