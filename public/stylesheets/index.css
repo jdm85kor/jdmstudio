@@ -14,7 +14,7 @@ body {
     height: 70%;
     top: 0;
     left: 0;
-    position: absolute;
+    position: relative;
 }
 .index img { 
 
@@ -30,7 +30,7 @@ body {
   height: 30%;
   top: 70%;
   left: 0;
-  position: absolute;
+  position: relative;
 
 }
 .index_login_icon {
