@@ -40,6 +40,15 @@ body {
 .is-center {
     text-align: center;
 }
+.vertical-container {
+  
+  display: -webkit-flex;
+  display:         flex;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
 @media screen and (min-width: 35.5em) {
 
   .index_title {
