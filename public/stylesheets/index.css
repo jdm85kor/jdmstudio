@@ -50,7 +50,6 @@ body {
           justify-content: center;
 }
 @media screen and (min-width: 35.5em) {
-
   .index_title {
     font-size: 50px;
   }
