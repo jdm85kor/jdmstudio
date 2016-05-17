@@ -66,7 +66,7 @@ passport.use(new GoogleStrategy({
 ));
 
 passport.use(new WechatStrategy({
-  appID:       pkginfo.oauth.wechat.appID,
+  appID:       pkginfo.oauth.wechat.clientID,
   name:        {},
   appSecret:   pkginfo.oauth.wechat.client_secret,
   client:      {},
