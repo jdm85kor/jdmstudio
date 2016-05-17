@@ -37,8 +37,8 @@
       "redirect_uris": "http://jdmstudio.photo/auth/google/callback"
     },
     "wechat": {
-      "appid": "wx749bdd7c563f1ccc",
-      "secret": "c650b7544ad1719b565433045d6d1f0c",
+      "clientID": "wx749bdd7c563f1ccc",
+      "client_secret": "c650b7544ad1719b565433045d6d1f0c",
       "callbackURL": "http://jdmstudio.photo/auth/wechat/callback"
     }
   },

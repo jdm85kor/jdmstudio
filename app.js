@@ -65,19 +65,19 @@ passport.use(new GoogleStrategy({
   }
 ));
 
-// passport.use(new WechatStrategy({
-//   appID:       pkginfo.oauth.wechat.appID,
-//   name:        {},
-//   clientSecret:   pkginfo.oauth.wechat.secret,
-//   client:      {},
-//   callbackURL: pkginfo.oauth.wechat.callbackURL,
-//   scope:       {},
-//   state:       {}
-//   },
-//   function(req, accessToken, refreshToken, profile, done) {
-//     done(err,profile);
-//   }
-// ));
+passport.use(new WechatStrategy({
+  appID:       pkginfo.oauth.wechat.appID,
+  name:        {},
+  appSecret:   pkginfo.oauth.wechat.client_secret,
+  client:      {},
+  callbackURL: pkginfo.oauth.wechat.callbackURL,
+  scope:       {},
+  state:       {}
+  },
+  function(req, accessToken, refreshToken, profile, done) {
+    done(err,profile);
+  }
+));
 
 
 var app = express();
