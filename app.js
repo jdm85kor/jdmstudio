@@ -69,7 +69,7 @@ passport.use(new WechatStrategy({
   appID:       pkginfo.oauth.wechat.appID,
   name:        {},
   appSecret:   pkginfo.oauth.secret,
-  client:      wechat | web,
+  client:      {wechat | web},
   callbackURL: pkginfo.oauth.callbackURL,
   scope:       {},
   state:       {}
