@@ -28,7 +28,7 @@ router.get('/google/callback',
 }));
 
 /* wechat auth button */
-router.get('/wechat',passport.authenticate('wechat',options));
+router.get('/wechat',passport.authenticate('wechat'));
 
 /* wechat auth callback */
 router.get('/wechat/callback',
