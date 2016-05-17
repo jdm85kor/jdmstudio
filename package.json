@@ -21,6 +21,7 @@
     "passport": "^0.3.2",
     "passport-facebook": "^2.0.0",
     "passport-google-oauth2": "^0.1.6",
+    "passport-wechat": "^2.0.2",
     "serve-favicon": "~2.3.0",
     "socket.io": "^1.4.5"
   },
@@ -34,6 +35,11 @@
       "client_id": "61711123767-v53brnvj436vq2ukvab5bufuobmu7b2u.apps.googleusercontent.com",
       "client_secret": "EpjCSFkASv-IPv6Wh43KHI8v",
       "redirect_uris": "http://jdmstudio.photo/auth/google/callback"
+    },
+    "wechat": {
+      "appid": "wx749bdd7c563f1ccc",
+      "secret": "c650b7544ad1719b565433045d6d1f0c",
+      "callbackURL": "http://jdmstudio.photo/auth/wechat/callback"
     }
   },
   "devDependencies": {}

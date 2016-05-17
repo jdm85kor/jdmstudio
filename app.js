@@ -30,7 +30,8 @@ var list = require('./routes/list');
 
 var passport = require('passport')
   , FacebookStrategy = require('passport-facebook').Strategy
-  , GoogleStrategy = require('passport-google-oauth2').Strategy;
+  , GoogleStrategy = require('passport-google-oauth2').Strategy
+  , WechatStrategy = require('passport-wechat').Strategy;
 
 passport.serializeUser(function(user,done){
   done(null,user.displayName);
@@ -61,6 +62,20 @@ passport.use(new GoogleStrategy({
   function(req, accessToken, refreshToken, profile, done) {
     //console.log(profile);
     done(null, profile); 
+  }
+));
+
+passport.use(new WechatStrategy({
+  appID:       pkginfo.oauth.wechat.appID,
+  name:        {},
+  appSecret:   pkginfo.oauth.secret,
+  client:      wechat | web,
+  callbackURL: pkginfo.oauth.callbackURL,
+  scope:       {},
+  state:       {}
+  },
+  function(req, accessToken, refreshToken, profile, done) {
+    done(err,profile);
   }
 ));
 

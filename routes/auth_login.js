@@ -10,7 +10,8 @@ router.get('/facebook/callback',
   passport.authenticate('facebook', { failureRedirect: '/' }),
   function(req,res) {
     res.redirect('/pure');
-  });
+  }
+);
 
 /* google auth button */
 router.get('/google', passport.authenticate('google', {
@@ -25,5 +26,17 @@ router.get('/google/callback',
   successRedirect: '/pure',
   failureRedirect: '/'
 }));
+
+/* wechat auth button */
+router.get('/wechat',passport.authenticate('wechat'));
+
+/* wechat auth callback */
+router.get('/wechat/callback',
+  passport.authenticate('wechat', { 
+    failureRedirect: '/',
+    successRedirect: '/pure'
+}));
+
+
 
 module.exports = router;
