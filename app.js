@@ -66,11 +66,11 @@ passport.use(new GoogleStrategy({
 ));
 
 passport.use(new WechatStrategy({
-  appID:       pkginfo.oauth.wechat.appID,
+  clientID:       pkginfo.oauth.wechat.appID,
   name:        {},
-  appSecret:   pkginfo.oauth.secret,
+  clientSecret:   pkginfo.oauth.wechat.secret,
   client:      {},
-  callbackURL: pkginfo.oauth.callbackURL,
+  callbackURL: pkginfo.oauth.wechat.callbackURL,
   scope:       {},
   state:       {}
   },
