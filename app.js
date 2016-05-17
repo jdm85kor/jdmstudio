@@ -72,7 +72,8 @@ passport.use(new WechatStrategy({
   client:      {},
   callbackURL: pkginfo.oauth.wechat.callbackURL,
   scope:       {},
-  state:       {}
+  state:       {},
+  passReqToCallback   : true
   },
   function(accessToken, refreshToken, profile, done) {
     done(null,profile);
