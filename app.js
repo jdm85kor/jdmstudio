@@ -30,8 +30,8 @@ var list = require('./routes/list');
 
 var passport = require('passport')
   , FacebookStrategy = require('passport-facebook').Strategy
-  , GoogleStrategy = require('passport-google-oauth2').Strategy;
-  // , WechatStrategy = require('passport-wechat').Strategy;
+  , GoogleStrategy = require('passport-google-oauth2').Strategy
+  , WechatStrategy = require('passport-wechat').Strategy;
 
 passport.serializeUser(function(user,done){
   done(null,user.displayName);
