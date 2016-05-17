@@ -30,8 +30,8 @@ var list = require('./routes/list');
 
 var passport = require('passport')
   , FacebookStrategy = require('passport-facebook').Strategy
-  , GoogleStrategy = require('passport-google-oauth2').Strategy
-  , WechatStrategy = require('passport-wechat').Strategy;
+  , GoogleStrategy = require('passport-google-oauth2').Strategy;
+  // , WechatStrategy = require('passport-wechat').Strategy;
 
 passport.serializeUser(function(user,done){
   done(null,user.displayName);
@@ -65,19 +65,19 @@ passport.use(new GoogleStrategy({
   }
 ));
 
-passport.use(new WechatStrategy({
-  appID:       pkginfo.oauth.wechat.appID,
-  name:        {},
-  clientSecret:   pkginfo.oauth.wechat.secret,
-  client:      {},
-  callbackURL: pkginfo.oauth.wechat.callbackURL,
-  scope:       {},
-  state:       {}
-  },
-  function(req, accessToken, refreshToken, profile, done) {
-    done(err,profile);
-  }
-));
+// passport.use(new WechatStrategy({
+//   appID:       pkginfo.oauth.wechat.appID,
+//   name:        {},
+//   clientSecret:   pkginfo.oauth.wechat.secret,
+//   client:      {},
+//   callbackURL: pkginfo.oauth.wechat.callbackURL,
+//   scope:       {},
+//   state:       {}
+//   },
+//   function(req, accessToken, refreshToken, profile, done) {
+//     done(err,profile);
+//   }
+// ));
 
 
 var app = express();
