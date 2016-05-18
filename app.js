@@ -31,13 +31,14 @@ var list = require('./routes/list');
 var passport = require('passport')
   , FacebookStrategy = require('passport-facebook').Strategy
   , GoogleStrategy = require('passport-google-oauth2').Strategy;
-  // , WechatStrategy = require('passport-wechat').Strategy;
 
 passport.serializeUser(function(user,done){
+  console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"+user.displayName+"!!!!!!!!!!!!!!!");
   done(null,user.displayName);
 });
 
 passport.deserializeUser(function(user,done){
+  console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"+user+"!!!!!!!!!!!!!!!");
   done(null,user);
 });
 
@@ -64,22 +65,6 @@ passport.use(new GoogleStrategy({
     done(null, profile); 
   }
 ));
-
-// passport.use(new WechatStrategy({
-//   appID:       pkginfo.oauth.wechat.clientID,
-//   name:        "jdm",
-//   appSecret:   pkginfo.oauth.wechat.client_secret,
-//   client:      "web",
-//   callbackURL: pkginfo.oauth.wechat.callbackURL,
-//   scope:       "snsapi_userinfo",
-//   state:       "STATE",
-//   passReqToCallback   : true
-//   },
-//   function(req, accessToken, refreshToken, profile, done) {
-//     done(null,profile);
-//   }
-// ));
-
 
 var app = express();
 
