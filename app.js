@@ -83,6 +83,11 @@ passport.use(new GoogleStrategy({
 
 var app = express();
 
+app.use( express.static(path.join(__dirname, 'public')) );
+app.use(cookieParser());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -90,9 +95,6 @@ app.set('view engine', 'ejs');
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(session( {
      store: new RedisStore( {
         host: 'ec2-54-217-206-114.eu-west-1.compute.amazonaws.com',
@@ -103,8 +105,6 @@ app.use(session( {
      secret: 'jdm' } ) );
 app.use( passport.initialize() );
 app.use( passport.session() );
-app.use( express.static(path.join(__dirname, 'public')) );
-
 
 
 MongoClient.connect(dbUrl,function(err,db){
