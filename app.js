@@ -67,15 +67,14 @@ passport.use(new GoogleStrategy({
 
 passport.use(new WechatStrategy({
   appID:       pkginfo.oauth.wechat.clientID,
-  name:        {},
+  name:        "jdm",
   appSecret:   pkginfo.oauth.wechat.client_secret,
-  client:      {},
+  client:      "web",
   callbackURL: pkginfo.oauth.wechat.callbackURL,
   scope:       "snsapi_userinfo",
-  state:       {},
-  passReqToCallback   : true
+  state:       "STATE",
   },
-  function(req, accessToken, refreshToken, profile, done) {
+  function(accessToken, refreshToken, profile, done) {
     done(null,profile);
   }
 ));
