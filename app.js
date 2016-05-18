@@ -33,12 +33,12 @@ var passport = require('passport')
   , GoogleStrategy = require('passport-google-oauth2').Strategy;
 
 passport.serializeUser(function(user,done){
-  console.log(user.displayName);
+  console.log("!!!!!!!"+user.displayName);
   done(null,user.displayName);
 });
 
 passport.deserializeUser(function(user,done){
-  console.log(user);
+  console.log("@@@@@@@"+user);
   done(null,user);
 });
 
