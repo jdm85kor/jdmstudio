@@ -28,7 +28,10 @@ router.get('/google/callback',
 }));
 
 /* wechat auth button */
-router.get('/wechat',passport.authenticate('wechat'));
+router.get('/wechat',passport.authenticate('wechat')
+           ,function(req,res){
+               console.log("abcdfef%$$$$$$$$%#$%#$%@#$");
+});
 
 /* wechat auth callback */
 router.get('/wechat/callback',
