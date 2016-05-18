@@ -35,13 +35,13 @@ var passport = require('passport')
 passport.serializeUser(function(user,done){
   console.log("!!!!!!!");
   console.log(user.displayName);
-  done(null,user.displayName);
+  return done(null,user.displayName);
 });
 
 passport.deserializeUser(function(user,done){
   console.log("@@@@######");
   console.log(user);
-  done(null,user);
+  return done(null,user);
 });
 
 
