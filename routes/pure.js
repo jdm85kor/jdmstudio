@@ -4,10 +4,8 @@ var passport = require('passport');
 
 function ensureAuthenticated(req,res,next){
   if(req.isAuthenticated()){
-    console.log("in if auth");
     return next();
   }
-  console.log("out of if");
   res.redirect('/');
 }
 
