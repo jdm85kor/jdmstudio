@@ -27,18 +27,18 @@ router.get('/google/callback',
   failureRedirect: '/'
 }));
 
-/* wechat auth button */
-router.get('/wechat',passport.authenticate('wechat')
-           ,function(req,res){
-               console.log("abcdfef%$$$$$$$$%#$%#$%@#$");
-});
+// /* wechat auth button */
+// router.get('/wechat',passport.authenticate('wechat')
+//            ,function(req,res){
+//                console.log("abcdfef%$$$$$$$$%#$%#$%@#$");
+// });
 
-/* wechat auth callback */
-router.get('/wechat/callback',
-  passport.authenticate('wechat', { 
-    failureRedirect: '/',
-    successRedirect: '/pure'
-}));
+// /* wechat auth callback */
+// router.get('/wechat/callback',
+//   passport.authenticate('wechat', { 
+//     failureRedirect: '/',
+//     successRedirect: '/pure'
+// }));
 
 
 
