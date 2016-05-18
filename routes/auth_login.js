@@ -7,11 +7,8 @@ router.get('/facebook',passport.authenticate('facebook'));
 
 /* facebook auth callback */
 router.get('/facebook/callback',
-  passport.authenticate('facebook', { failureRedirect: '/' }),
-  function(req,res) {
-    res.redirect('/pure');
-  }
-);
+  passport.authenticate('facebook', { failureRedirect: '/',
+                                      successRedirect: '/pure'}));
 
 /* google auth button */
 router.get('/google', passport.authenticate('google', {
@@ -22,9 +19,7 @@ router.get('/google', passport.authenticate('google', {
 
 /* callback auth callback */
 router.get('/google/callback',
- passport.authenticate('google', {
-  successRedirect: '/pure',
-  failureRedirect: '/'
-}));
+ passport.authenticate('google', { successRedirect: '/pure',
+                                   failureRedirect: '/'     }));
 
 module.exports = router;

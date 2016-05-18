@@ -3,7 +3,7 @@ var router = express.Router();
 var passport = require('passport');
 
 function ensureAuthenticated(req,res,next){
-  if(this.req.isAuthenticated()){
+  if(req.isAuthenticated()){
     return next();
   }
   res.redirect('/');
