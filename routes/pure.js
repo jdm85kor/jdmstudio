@@ -12,7 +12,7 @@ function ensureAuthenticated(req,res,next){
 
 /* GET users page. */
 router.get('/',ensureAuthenticated, function(req, res) {
-//	console.log(req);
+	console.log("!@#!@#"+req+"!@#%!@#");
   	res.render('pure', { title: 'JDMstudio'
   						, user : req.user
   });
