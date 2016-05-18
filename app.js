@@ -37,7 +37,6 @@ passport.serializeUser(function(user,done){
 });
 
 passport.deserializeUser(function(user,done){
-  console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"+user+"!!!!!!!!!!!!!!!");
   done(null,user);
 });
 
@@ -45,9 +44,10 @@ passport.deserializeUser(function(user,done){
 passport.use(new FacebookStrategy({
   clientID:pkginfo.oauth.facebook.FACEBOOK_APP_ID,
   clientSecret:pkginfo.oauth.facebook.FACEBOOK_APP_SECRET,
-  callbackURL:pkginfo.oauth.facebook.callbackURL
+  callbackURL:pkginfo.oauth.facebook.callbackURL,
+  passReqToCallback   : true
   },
-  function(accessToken, refreshToken, profile, done){
+  function(req, accessToken, refreshToken, profile, done){
     done(null,profile);
   }
 ));
@@ -59,7 +59,6 @@ passport.use(new GoogleStrategy({
     passReqToCallback   : true
   },
   function(req, accessToken, refreshToken, profile, done) {
-    console.log(profile);
     done(null, profile); 
   }
 ));
