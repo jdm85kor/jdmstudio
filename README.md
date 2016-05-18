@@ -5,11 +5,11 @@
 
 - web framwork : express v4.0
 - session store : redis
-- login : passport (facebook, google)
+- login : passport (facebook, google) , wechat 작업중
 - chatting : socketio
 - db : mongodb
 - server : heroku
-- front css : pure svg
+- front css : purecss
 
 ==========================================================================
 
@@ -76,3 +76,17 @@
 >>>> index 화면은 여기까지 작업하고 이제 실제 서비스 내용을 띄우는 화면과 블로그 부분을
 
 >>>> 수정, 개발하기 시작!
+
+==========================================================================
+
+### 5월 17일
+
+>>>> index 페이지에 wechat login api 를 붙이는 작업을 진행중입니다.
+
+>>>> 생각보다 쉽지 않아 시간이 걸릴것으로 예상
+
+>>>> https://open.weixin.qq.com/
+
+>>>> passport-wechat.js 를 사용하려 하는데, 뭔가 이상하다.
+
+>>>> 직접 패키지를 만들어야될 듯
