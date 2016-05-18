@@ -87,8 +87,8 @@ app.use(session( {
         url: 'redis://h:pc7egvk4ocuk596hioafm855mem@ec2-54-217-206-114.eu-west-1.compute.amazonaws.com:12479'
      }),
      secret: 'jdm',
-     saveUninitialized: "false",
-     resave: "false" } ) );
+     saveUninitialized: false,
+     resave: false } ) );
 app.use( passport.initialize() );
 app.use( passport.session() );
 
