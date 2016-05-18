@@ -3,7 +3,7 @@ var router = express.Router();
 var passport = require('passport');
 
 function ensureAuthenticated(req,res,next){
-  console.log(req);
+  
   if(req.isAuthenticated()){
     return next();
   }
@@ -13,8 +13,7 @@ function ensureAuthenticated(req,res,next){
 
 /* GET users page. */
 router.get('/',ensureAuthenticated, function(req, res) {
-	console.log("!@#!@#"+req+"!@#%!@#");
-  	res.render('pure', { title: 'JDMstudio'
+	 	res.render('pure', { title: 'JDMstudio'
   						, user : req.user
   });
 });
