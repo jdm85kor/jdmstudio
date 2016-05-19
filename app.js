@@ -86,15 +86,15 @@ app.use( passport.session() );
 app.use( express.static(path.join(__dirname, 'public')) );
 
 passport.serializeUser(function(user,done){
-  console.log("!!!!!!!");
+  console.log("serializeUser");
   console.log(user.displayName);
-  return done(null,user.displayName);
+  done(null,user.displayName);
 });
 
 passport.deserializeUser(function(user,done){
-  console.log("@@@@######");
+  console.log("deserializeUser");
   console.log(user);
-  return done(null,user);
+  done(null,user);
 });
 
 MongoClient.connect(dbUrl,function(err,db){
