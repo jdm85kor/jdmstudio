@@ -32,21 +32,6 @@ var passport = require('passport')
   , FacebookStrategy = require('passport-facebook').Strategy
   , GoogleStrategy = require('passport-google-oauth2').Strategy;
 
-passport.serializeUser(function(user,done){
-  console.log("serializeUser");
-  console.log(user.displayName);
-  done(null,user.displayName);
-});
-
-passport.deserializeUser(function(user, done) {
-  console.log("deserializeUser");
-  done(null, user);
-});
-// passport.deserializeUser(function(id, done) {
-//   findById(id, function(err, user) {
-//     done(err, user);
-//   });
-// });
 
 passport.use(new FacebookStrategy({
   clientID:pkginfo.oauth.facebook.FACEBOOK_APP_ID,
@@ -92,12 +77,28 @@ app.use(session( {
      secret: 'jdm'
      }
 ));
+
+passport.serializeUser(function(user,done){
+  console.log("serializeUser");
+  console.log(user.displayName);
+  done(null,user.displayName);
+});
+
+passport.deserializeUser(function(user, done) {
+  console.log("deserializeUser");
+  done(null, user);
+});
+// passport.deserializeUser(function(id, done) {
+//   findById(id, function(err, user) {
+//     done(err, user);
+//   });
+// });
+
 console.log("passport.initialize()");
 app.use( passport.initialize() );
 console.log("passport.session()");
 app.use( passport.session() );
 app.use( express.static(path.join(__dirname, 'public')) );
-
 
 
 MongoClient.connect(dbUrl,function(err,db){
