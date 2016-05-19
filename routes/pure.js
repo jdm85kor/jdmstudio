@@ -18,7 +18,7 @@ function ensureAuthenticated(req,res,next){
 /* GET users page. */
 router.get('/',ensureAuthenticated, function(req, res) {
 	 	res.render('pure', { title: 'JDMstudio'
-  						, username : req.user.displayName
+  						, username : req.user
   });
 });
 
