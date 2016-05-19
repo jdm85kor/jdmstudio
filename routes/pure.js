@@ -8,7 +8,7 @@ function ensureAuthenticated(req,res,next){
      console.log("isAuthenticated()");
     return next();
   }
-  res.redirect('/');
+  // res.redirect('/');
 }
 
 
