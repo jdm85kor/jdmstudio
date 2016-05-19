@@ -7,7 +7,7 @@ function ensureAuthenticated(req,res,next){
   console.log('req=' + req);
   console.log("req.isAuthenticated()= " + req.isAuthenticated() ); 
   if( req.isAuthenticated() ){
-     console.log("isAuthenticated()");
+     console.log("did isAuthenticated()");
     return next();
   }
   res.redirect('/');
