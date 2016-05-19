@@ -91,9 +91,10 @@ passport.serializeUser(function(user,done){
   done(null,user.displayName);
 });
 
-passport.deserializeUser(function(user,done){
-  console.log("deserializeUser");
-  done(null,user);
+passport.deserializeUser(function(id, done) {
+  findById(id, function(err, user) {
+    done(err, user);
+  });
 });
 
 MongoClient.connect(dbUrl,function(err,db){
