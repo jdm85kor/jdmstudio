@@ -10,7 +10,8 @@ router.get('/facebook/callback',
   passport.authenticate('facebook', { failureRedirect: '/' }),
   function(req,res) {
     res.redirect('/pure');
-  });
+  }
+);
 
 /* google auth button */
 router.get('/google', passport.authenticate('google', {
