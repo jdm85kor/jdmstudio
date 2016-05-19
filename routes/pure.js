@@ -9,6 +9,7 @@ function ensureAuthenticated(req,res,next){
     return next();
   }
   // res.redirect('/');
+  return next();
 }
 
 
