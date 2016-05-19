@@ -91,7 +91,9 @@ app.use(session( {
      saveUninitialized: true
      }
 ));
+console.log("passport.initialize()");
 app.use( passport.initialize() );
+console.log("passport.session()");
 app.use( passport.session() );
 app.use( express.static(path.join(__dirname, 'public')) );
 
