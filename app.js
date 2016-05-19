@@ -88,7 +88,7 @@ app.use( express.static(path.join(__dirname, 'public')) );
 passport.serializeUser(function(user,done){
   console.log("serializeUser");
   console.log(user.displayName);
-  done(null,user.displayName);
+  done(null,user);
 });
 
 passport.deserializeUser(function(id, done) {
