@@ -10,8 +10,8 @@ function ensureAuthenticated(req,res,next){
      console.log("did isAuthenticated()");
     return next();
   }
-  res.redirect('/');
-  // return next();
+  // res.redirect('/');
+  return next();
 }
 
 
