@@ -88,14 +88,17 @@ app.use( express.static(path.join(__dirname, 'public')) );
 passport.serializeUser(function(user,done){
   console.log("serializeUser");
   console.log(user.displayName);
-  done(null,user);
+  done(null,user.displayName);
 });
 
-passport.deserializeUser(function(id, done) {
-  findById(id, function(err, user) {
-    done(err, user);
-  });
+passport.deserializeUser(function(user, done) {
+  done(err, user);
 });
+// passport.deserializeUser(function(id, done) {
+//   findById(id, function(err, user) {
+//     done(err, user);
+//   });
+// });
 
 MongoClient.connect(dbUrl,function(err,db){
   console.log("Connected correctly to server.");
