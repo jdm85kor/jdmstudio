@@ -3,9 +3,9 @@ var router = express.Router();
 var passport = require('passport');
 
 function ensureAuthenticated(req,res,next){
-  console.log("^^^^^^^^^%%%%%%%%%%%");
+  console.log("function ensureAuthenticated()");
   if(req.isAuthenticated()){
-     console.log("***************** in if **********");
+     console.log("isAuthenticated()");
     return next();
   }
   res.redirect('/');
