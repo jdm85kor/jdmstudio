@@ -83,7 +83,7 @@ console.log("passport.initialize()");
 app.use( passport.initialize() );
 console.log("passport.session()");
 app.use( passport.session() );
-app.use( app.router);
+app.use( app.Router);
 app.use( express.static(path.join(__dirname, 'public')) );
 
 passport.serializeUser(function(user,done){

@@ -4,7 +4,7 @@ var passport = require('passport');
 
 function ensureAuthenticated(req,res,next){
   console.log("function ensureAuthenticated()");
-  if(req.isAuthenticated()){
+  if( req.isAuthenticated() ){
      console.log("isAuthenticated()");
     return next();
   }
