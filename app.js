@@ -36,10 +36,11 @@ var passport = require('passport')
 passport.use(new FacebookStrategy({
   clientID:pkginfo.oauth.facebook.FACEBOOK_APP_ID,
   clientSecret:pkginfo.oauth.facebook.FACEBOOK_APP_SECRET,
-  callbackURL:pkginfo.oauth.facebook.callbackURL
-  // passReqToCallback   : true
+  callbackURL:pkginfo.oauth.facebook.callbackURL,
+  passReqToCallback   : true
   },
-  function(accessToken, refreshToken, profile, done){
+  function(req,accessToken, refreshToken, profile, done){
+    console.log("req = " + req);
     done(null,profile);
   }
 ));
@@ -47,10 +48,11 @@ passport.use(new FacebookStrategy({
 passport.use(new GoogleStrategy({
     clientID:     pkginfo.oauth.google.client_id,
     clientSecret: pkginfo.oauth.google.client_secret,
-    callbackURL:  pkginfo.oauth.google.redirect_uris
-    // passReqToCallback   : true
+    callbackURL:  pkginfo.oauth.google.redirect_uris,
+    passReqToCallback   : true
   },
-  function(accessToken, refreshToken, profile, done) {
+  function(req, accessToken, refreshToken, profile, done) {
+    console.log("req = " + req);
     done(null, profile); 
   }
 ));
@@ -88,11 +90,9 @@ passport.serializeUser(function(user,done){
 //   console.log("deserializeUser");
 //   done(null, user);
 // });
-passport.deserializeUser(function(displayName, done) {
+passport.deserializeUser(function(user, done) {
   console.log("deserializeUser");
-  findById(displayName, function(err, user) {
-    done(err, user);
-  });
+  done(null, user);
 });
 
 console.log("passport.initialize()");
@@ -100,7 +100,6 @@ app.use( passport.initialize() );
 console.log("passport.session()");
 app.use( passport.session() );
 app.use( express.static(path.join(__dirname, 'public')) );
-
 
 MongoClient.connect(dbUrl,function(err,db){
   console.log("Connected correctly to server.");
