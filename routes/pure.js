@@ -8,15 +8,15 @@ function ensureAuthenticated(req,res,next){
      console.log("isAuthenticated()");
     return next();
   }
-  // res.redirect('/');
-  return next();
+  res.redirect('/');
+  // return next();
 }
 
 
 /* GET users page. */
 router.get('/',ensureAuthenticated, function(req, res) {
 	 	res.render('pure', { title: 'JDMstudio'
-  						, user : req.user
+  						, username : req.user.displayName
   });
 });
 
