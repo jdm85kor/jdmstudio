@@ -32,18 +32,6 @@ var passport = require('passport')
   , FacebookStrategy = require('passport-facebook').Strategy
   , GoogleStrategy = require('passport-google-oauth2').Strategy;
 
-passport.serializeUser(function(user,done){
-  console.log("!!!!!!!");
-  console.log(user.displayName);
-  return done(null,user.displayName);
-});
-
-passport.deserializeUser(function(user,done){
-  console.log("@@@@######");
-  console.log(user);
-  return done(null,user);
-});
-
 
 passport.use(new FacebookStrategy({
   clientID:pkginfo.oauth.facebook.FACEBOOK_APP_ID,
@@ -97,6 +85,17 @@ console.log("passport.session()");
 app.use( passport.session() );
 app.use( express.static(path.join(__dirname, 'public')) );
 
+passport.serializeUser(function(user,done){
+  console.log("!!!!!!!");
+  console.log(user.displayName);
+  return done(null,user.displayName);
+});
+
+passport.deserializeUser(function(user,done){
+  console.log("@@@@######");
+  console.log(user);
+  return done(null,user);
+});
 
 MongoClient.connect(dbUrl,function(err,db){
   console.log("Connected correctly to server.");
