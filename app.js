@@ -77,8 +77,8 @@ app.use(session( {
      store: new RedisStore( {
         host: 'ec2-54-217-206-114.eu-west-1.compute.amazonaws.com',
         port: 12479,
-        password: 'pc7egvk4ocuk596hioafm855mem',
-        url: 'redis://h:pc7egvk4ocuk596hioafm855mem@ec2-54-217-206-114.eu-west-1.compute.amazonaws.com:12479'
+        password: 'p28c62g5m9bj5abiade602qj4p3',
+        url: 'redis://h:p28c62g5m9bj5abiade602qj4p3@ec2-54-217-206-114.eu-west-1.compute.amazonaws.com:12479'
      }),
      secret: 'jdm'
      }
