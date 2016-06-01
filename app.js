@@ -40,8 +40,9 @@ passport.use(new FacebookStrategy({
   passReqToCallback   : true
   },
   function(req,accessToken, refreshToken, profile, done){
-    console.log("req = " + req);
+    console.log("in app.js req = " + req);
     done(null,profile);
+    console.log("in app.js after done(null,profile) req = " + req);
   }
 ));
 
