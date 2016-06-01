@@ -40,9 +40,7 @@ passport.use(new FacebookStrategy({
   passReqToCallback   : true
   },
   function(req,accessToken, refreshToken, profile, done){
-    console.log("in app.js req = " + req);
     done(null,profile);
-    console.log("in app.js after done(null,profile) req = " + req);
   }
 ));
 
@@ -53,7 +51,6 @@ passport.use(new GoogleStrategy({
     passReqToCallback   : true
   },
   function(req, accessToken, refreshToken, profile, done) {
-    console.log("req = " + req);
     done(null, profile); 
   }
 ));
@@ -85,25 +82,19 @@ app.use(session( {
 ));
 
 passport.serializeUser(function(user,done){
-  console.log("serializeUser");
-  console.log(user.displayName);
+// console.log("serializeUser");
+// console.log(user.displayName);
   done(null,user.displayName);
-  console.log("after done() serializeUser");
 });
 
-// passport.deserializeUser(function(user, done) {
-//   console.log("deserializeUser");
-//   done(null, user);
-// });
+
 passport.deserializeUser(function(user, done) {
-  console.log("deserializeUser");
-  console.log(user.displayName);
+//  console.log("deserializeUser");
+//  console.log(user.displayName);
   done(null, user);
 });
 
-console.log("passport.initialize()");
 app.use( passport.initialize() );
-console.log("passport.session()");
 app.use( passport.session() );
 
 
