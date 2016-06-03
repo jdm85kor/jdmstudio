@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
-  },
+    },
   "dependencies": {
     "body-parser": "~1.13.2",
     "connect-redis": "^3.0.2",
@@ -35,6 +35,11 @@
       "client_secret": "EpjCSFkASv-IPv6Wh43KHI8v",
       "redirect_uris": "http://jdmstudio.photo/auth/google/callback"
     }
+    "wechat": {
+      "clientID": "wx749bdd7c563f1ccc",
+      "client_secret": "c650b7544ad1719b565433045d6d1f0c",
+      "callbackURL": "http://jdmstudio.photo/auth/wechat/callback"
+      } 
   },
   "devDependencies": {}
 }
