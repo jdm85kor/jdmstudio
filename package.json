@@ -34,7 +34,7 @@
       "client_id": "61711123767-v53brnvj436vq2ukvab5bufuobmu7b2u.apps.googleusercontent.com",
       "client_secret": "EpjCSFkASv-IPv6Wh43KHI8v",
       "redirect_uris": "http://jdmstudio.photo/auth/google/callback"
-    }
+    },
     "wechat": {
       "clientID": "wx749bdd7c563f1ccc",
       "client_secret": "c650b7544ad1719b565433045d6d1f0c",
